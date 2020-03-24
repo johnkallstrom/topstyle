@@ -47,7 +47,8 @@ const Register = () => {
 
     fetch('http://localhost:5000/user/register', requestOptions)
       .then(res => res.json())
-      .then(data => console.log(data));
+      .then(data => console.log(data))
+      .catch(err => console.log(err));
 
     setFirstName('');
     setLastName('');

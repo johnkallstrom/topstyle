@@ -1,22 +1,18 @@
 const User = require('../models/User');
-
-const GetAllUsers = async (req, res) => {
-  try {
-    const users = await User.find();
-    res.json(users);
-  } catch (err) {
-    res.json({ message: err });
-  }
-};
+const bcrypt = require('bcrypt');
 
 const CreateUser = async (req, res) => {
   const userExists = await User.findOne({ username: req.body.username });
   if (userExists === true)
-    return res.status(400).send('The user already exists in our database.');
+    return res
+      .status(400)
+      .send({ message: 'The username already exists in our database.' });
+
+  const hashedPass = await bcrypt.hash(req.body.password, 10);
 
   const newUser = await new User({
     username: req.body.username,
-    password: req.body.password,
+    password: hashedPass,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     email: req.body.email
@@ -31,13 +27,22 @@ const CreateUser = async (req, res) => {
 };
 
 const LoginUser = async (req, res) => {
-  const userExists = await User.findOne({ username: req.body.username });
-  if (userExists === true) {
-    // Check if password matches
-  } else {
+  const user = await User.findOne({ username: req.body.username });
+  if (!user)
     return res
       .status(400)
-      .send('That username does not exist in our database.');
+      .send({ message: 'The username does not exist in our database.' });
+
+  const isPassValid = await bcrypt.compare(req.body.password, user.password);
+
+  if (isPassValid === false) {
+    return res.status(400).send({ message: 'The password is incorrect. ' });
+  }
+
+  if (isPassValid === true) {
+    return res.send({
+      message: 'Username and password is corret. Login successful!'
+    });
   }
 };
 

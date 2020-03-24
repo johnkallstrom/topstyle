@@ -15,6 +15,23 @@ const Login = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
+
+    const user = {
+      username: username,
+      password: password
+    };
+
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(user)
+    };
+
+    fetch('http://localhost:5000/user/login', requestOptions)
+      .then(res => res.json())
+      .then(data => console.log(data))
+      .catch(err => console.log(err));
+
     setUsername('');
     setPassword('');
   };
