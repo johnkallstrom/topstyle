@@ -58,9 +58,11 @@ body {
   text-align: center;
   margin: 0 auto;
   width: 80%;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 #home h1 {
+  font-size: 28px;
+  font-weight: 300;
   line-height: 3rem;
 }
