@@ -38,28 +38,30 @@ const Login = () => {
 
   return (
     <div id='login-form'>
-      <h3>Login</h3>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <input
-            type='text'
-            name='username'
-            placeholder='Username...'
-            value={username}
-            onChange={updateUsername}
-          />
-        </div>
-        <div>
-          <input
-            type='password'
-            name='password'
-            value={password}
-            placeholder='Password...'
-            onChange={updatePassword}
-          />
-        </div>
-        <button>Login</button>
-      </form>
+      <div className='container'>
+        <h2>Login</h2>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <input
+              type='text'
+              name='username'
+              placeholder='Username...'
+              value={username}
+              onChange={updateUsername}
+            />
+          </div>
+          <div>
+            <input
+              type='password'
+              name='password'
+              value={password}
+              placeholder='Password...'
+              onChange={updatePassword}
+            />
+          </div>
+          <button>Login</button>
+        </form>
+      </div>
     </div>
   );
 };

@@ -17,16 +17,18 @@ body {
   color: var(--sub-color);
 }
 
-#app {
+.container {
   width: 60%;
   margin: 0 auto;
   overflow: hidden;
-  margin-bottom: 2rem;
 }
 
 #header {
   background-color: var(--main-color);
-  padding: 3rem;
+}
+
+#header .container {
+  padding: 2rem;
 }
 
 #header a {
@@ -37,7 +39,7 @@ body {
 
 #navbar {
   background-color: var(--sub-color);
-  padding: 2rem;
+  padding: 1rem;
 }
 
 #navbar ul {
@@ -54,11 +56,22 @@ body {
   text-decoration: none;
 }
 
+#navbar a i {
+  color: #fff;
+}
+
+#footer {
+  padding: 2rem;
+  color: #fff;
+  text-align: center;
+  background-color: var(--main-color);
+}
+
 #home {
+  padding: 2rem;
   text-align: center;
   margin: 0 auto;
   width: 80%;
-  margin-top: 3rem;
 }
 
 #home h1 {

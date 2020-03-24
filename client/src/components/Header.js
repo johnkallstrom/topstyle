@@ -3,11 +3,13 @@ import { Link, withRouter } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <div id='header'>
-      <Link to='/'>
-        <h1>TopStyle</h1>
-      </Link>
-    </div>
+    <header id='header'>
+      <div className='container'>
+        <Link to='/'>
+          <h1>TopStyle</h1>
+        </Link>
+      </div>
+    </header>
   );
 };
 

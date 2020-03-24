@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import Login from './components/Login';
 import Register from './components/Register';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='/login' component={Login} />
           <Route path='/register' component={Register} />
         </Switch>
+        <Footer />
       </div>
     </BrowserRouter>
   );

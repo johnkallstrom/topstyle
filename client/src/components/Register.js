@@ -59,55 +59,57 @@ const Register = () => {
 
   return (
     <div id='register-form'>
-      <h3>Register</h3>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <input
-            type='text'
-            name='username'
-            placeholder='Username...'
-            value={username}
-            onChange={updateUsername}
-          />
-        </div>
-        <div>
-          <input
-            type='password'
-            name='password'
-            value={password}
-            placeholder='Password...'
-            onChange={updatePassword}
-          />
-        </div>
-        <div>
-          <input
-            type='text'
-            name='firstName'
-            placeholder='First name...'
-            value={firstName}
-            onChange={updateFirstName}
-          />
-        </div>
-        <div>
-          <input
-            type='text'
-            name='lastName'
-            placeholder='Last name...'
-            value={lastName}
-            onChange={updateLastName}
-          />
-        </div>
-        <div>
-          <input
-            type='email'
-            name='email'
-            placeholder='Email...'
-            value={email}
-            onChange={updateEmail}
-          />
-        </div>
-        <button>Register</button>
-      </form>
+      <div className='container'>
+        <h2>Register</h2>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <input
+              type='text'
+              name='username'
+              placeholder='Username...'
+              value={username}
+              onChange={updateUsername}
+            />
+          </div>
+          <div>
+            <input
+              type='password'
+              name='password'
+              value={password}
+              placeholder='Password...'
+              onChange={updatePassword}
+            />
+          </div>
+          <div>
+            <input
+              type='text'
+              name='firstName'
+              placeholder='First name...'
+              value={firstName}
+              onChange={updateFirstName}
+            />
+          </div>
+          <div>
+            <input
+              type='text'
+              name='lastName'
+              placeholder='Last name...'
+              value={lastName}
+              onChange={updateLastName}
+            />
+          </div>
+          <div>
+            <input
+              type='email'
+              name='email'
+              placeholder='Email...'
+              value={email}
+              onChange={updateEmail}
+            />
+          </div>
+          <button>Register</button>
+        </form>
+      </div>
     </div>
   );
 };
