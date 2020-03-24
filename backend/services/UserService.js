@@ -46,6 +46,5 @@ const LoginUser = async (req, res) => {
   }
 };
 
-exports.GetAllUsers = GetAllUsers;
 exports.CreateUser = CreateUser;
 exports.LoginUser = LoginUser;
