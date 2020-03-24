@@ -1,0 +1,36 @@
+:root {
+  --main-font: 'Roboto', sans-serif;
+  --main-color: #20333c;
+  --sub-color: #415766;
+}
+
+#register-form {
+  margin-top: 2rem;
+}
+
+#register-form input {
+  width: 50%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  font-family: var(--main-font);
+  font-size: 17px;
+}
+
+#register-form button {
+  width: 25%;
+  margin-top: 0.5rem;
+  padding: 0.8rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+  border-radius: 8px;
+  border: none;
+  color: #fff;
+  background-color: var(--sub-color);
+}
+
+#register-form button:hover {
+  cursor: pointer;
+  background-color: var(--main-color);
+}
