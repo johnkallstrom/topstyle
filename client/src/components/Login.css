@@ -4,8 +4,8 @@
   --sub-color: #415766;
 }
 
-#login-form {
-  padding: 3rem;
+#login-form .container {
+  padding: 2rem 1rem 2rem 1rem;
 }
 
 #login-form input {

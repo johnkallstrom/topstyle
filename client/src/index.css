@@ -39,6 +39,9 @@ body {
 
 #navbar {
   background-color: var(--sub-color);
+}
+
+#navbar .container {
   padding: 1rem;
 }
 

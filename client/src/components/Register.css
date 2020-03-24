@@ -4,8 +4,8 @@
   --sub-color: #415766;
 }
 
-#register-form {
-  padding: 3rem;
+#register-form .container {
+  padding: 2rem 1rem 2rem 1rem;
 }
 
 #register-form input {
