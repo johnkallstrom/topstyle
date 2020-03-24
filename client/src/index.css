@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 17px;
+  line-height: 1.6rem;
+  color: #555;
+}
+
+#app {
+  width: 60%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+#header {
+  background-color: #555;
+  padding: 3rem;
+}
+
+#header h1 {
+  color: #fff;
+  text-align: center;
+}
+
+#navbar {
+  background-color: #333;
+  padding: 2rem;
+}
+
+#navbar ul {
+  list-style: none;
+}
+
+#navbar li {
+  display: inline;
+  padding-right: 2rem;
+}
+
+#navbar a {
+  color: #fff;
+  text-decoration: none;
+}
