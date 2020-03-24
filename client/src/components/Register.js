@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import './Register.css';
 
 const Register = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
 
   const updateFirstName = e => {
     setFirstName(e.target.value);
@@ -30,6 +30,25 @@ const Register = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
+
+    const newUser = {
+      username: username,
+      password: password,
+      firstName: firstName,
+      lastName: lastName,
+      email: email
+    };
+
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newUser)
+    };
+
+    fetch('http://localhost:5000/user/register', requestOptions)
+      .then(res => res.json())
+      .then(data => console.log(data));
+
     setFirstName('');
     setLastName('');
     setEmail('');
