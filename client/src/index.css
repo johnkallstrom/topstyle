@@ -1,3 +1,9 @@
+:root {
+  --main-font: 'Roboto', sans-serif;
+  --main-color: #20333c;
+  --sub-color: #415766;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +11,7 @@
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--main-font);
   font-size: 17px;
   line-height: 1.6rem;
   color: #555;
@@ -18,7 +24,7 @@ body {
 }
 
 #header {
-  background-color: #555;
+  background-color: var(--main-color);
   padding: 3rem;
 }
 
@@ -28,7 +34,7 @@ body {
 }
 
 #navbar {
-  background-color: #333;
+  background-color: var(--sub-color);
   padding: 2rem;
 }
 
