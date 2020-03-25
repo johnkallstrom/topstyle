@@ -1,5 +1,6 @@
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 const CreateUser = async (req, res) => {
   const userExists = await User.findOne({ username: req.body.username });
@@ -40,9 +41,13 @@ const LoginUser = async (req, res) => {
   }
 
   if (isPassValid === true) {
-    return res.send({
-      message: 'Username and password is corret. Login successful!'
-    });
+    const token = jwt.sign({ user }, process.env.PRIVATE_KEY);
+
+    try {
+      res.send({ token: token });
+    } catch (err) {
+      res.send({ message: err });
+    }
   }
 };
 

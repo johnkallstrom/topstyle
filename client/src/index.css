@@ -28,13 +28,12 @@ body {
 }
 
 #header .container {
-  padding: 2rem;
+  padding: 2rem 1rem 2rem 1rem;
 }
 
 #header a {
   text-decoration: none;
   color: #fff;
-  text-align: center;
 }
 
 #navbar {
@@ -61,6 +60,11 @@ body {
 
 #navbar a i {
   color: #fff;
+}
+
+#navbar #login-link,
+#register-link {
+  float: right;
 }
 
 #footer {

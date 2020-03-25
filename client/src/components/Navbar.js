@@ -7,13 +7,19 @@ const Navbar = () => {
       <div className='container'>
         <ul>
           <li>
-            <Link to='/'>Home</Link>
+            <Link to='/'>Hem</Link>
           </li>
           <li>
-            <Link to='/login'>Login</Link>
+            <Link to='/clothes'>Kläder</Link>
           </li>
           <li>
-            <Link to='/register'>Register</Link>
+            <Link to='/shoes'>Skor</Link>
+          </li>
+          <li id='register-link'>
+            <Link to='/register'>Registrera</Link>
+          </li>
+          <li id='login-link'>
+            <Link to='/login'>Logga in</Link>
           </li>
         </ul>
       </div>

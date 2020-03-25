@@ -5,7 +5,7 @@ const Home = () => {
     <div id='home'>
       <div className='container'>
         <h1>
-          We deliver your order quickly and with no coronavirus!{' '}
+          Vi levererar din beställning snabbt och utan coronavirus!{' '}
           <span>&#128567;</span>
         </h1>
       </div>

@@ -6,7 +6,7 @@ require('dotenv').config();
 
 app.use(cors());
 app.use(express.json());
-app.use('/user', require('./routes/Users'));
+app.use('/user', require('./routes/UserRoutes'));
 
 mongoose.set('useUnifiedTopology', true);
 mongoose.set('useNewUrlParser', true);

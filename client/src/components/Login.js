@@ -39,13 +39,13 @@ const Login = () => {
   return (
     <div id='login-form'>
       <div className='container'>
-        <h2>Login</h2>
+        <h2>Logga in</h2>
         <form onSubmit={handleSubmit}>
           <div>
             <input
               type='text'
               name='username'
-              placeholder='Username...'
+              placeholder='Användarnamn'
               value={username}
               onChange={updateUsername}
             />
@@ -55,11 +55,11 @@ const Login = () => {
               type='password'
               name='password'
               value={password}
-              placeholder='Password...'
+              placeholder='Lösenord'
               onChange={updatePassword}
             />
           </div>
-          <button>Login</button>
+          <button>Logga in</button>
         </form>
       </div>
     </div>
