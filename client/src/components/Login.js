@@ -29,7 +29,12 @@ const Login = () => {
 
     fetch('http://localhost:5000/user/login', requestOptions)
       .then(res => res.json())
-      .then(data => console.log(data))
+      .then(data => {
+        if (data.hasOwnProperty('token') === true) {
+          // store token in localStorage
+          localStorage.setItem('token', data.token);
+        }
+      })
       .catch(err => console.log(err));
 
     setUsername('');

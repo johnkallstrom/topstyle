@@ -10,16 +10,16 @@ const Navbar = () => {
             <Link to='/'>Hem</Link>
           </li>
           <li>
-            <Link to='/clothes'>Kläder</Link>
+            <Link to='/order/clothes'>Kläder</Link>
           </li>
           <li>
-            <Link to='/shoes'>Skor</Link>
+            <Link to='/order/shoes'>Skor</Link>
           </li>
           <li id='register-link'>
-            <Link to='/register'>Registrera</Link>
+            <Link to='/user/register'>Registrera</Link>
           </li>
           <li id='login-link'>
-            <Link to='/login'>Logga in</Link>
+            <Link to='/user/login'>Logga in</Link>
           </li>
         </ul>
       </div>
