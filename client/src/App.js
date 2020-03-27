@@ -14,8 +14,8 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route path='/user/login' component={Login} />
-          <Route path='/user/register' component={Register} />
+          <Route path='/login' component={Login} />
+          <Route path='/register' component={Register} />
         </Switch>
       </div>
     </BrowserRouter>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Login.css';
+import { Redirect } from 'react-router-dom';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -30,10 +31,7 @@ const Login = () => {
     fetch('http://localhost:5000/api/user/login', requestOptions)
       .then(res => res.json())
       .then(data => {
-        if (data.hasOwnProperty('token') === true) {
-          // store token in localStorage
-          localStorage.setItem('token', data.token);
-        }
+        localStorage.setItem('token', data.token);
       })
       .catch(err => console.log(err));
 
