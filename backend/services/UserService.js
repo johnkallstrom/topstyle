@@ -2,6 +2,17 @@ const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
+// GET ALL
+const GetAllUsers = async (req, res) => {
+  try {
+    const users = await User.find();
+    res.json(users);
+  } catch (err) {
+    res.json({ message: err });
+  }
+};
+
+// CREATE
 const CreateUser = async (req, res) => {
   const userExists = await User.findOne({ username: req.body.username });
   if (userExists === true)
@@ -27,6 +38,7 @@ const CreateUser = async (req, res) => {
   }
 };
 
+// LOGIN
 const LoginUser = async (req, res) => {
   const user = await User.findOne({ username: req.body.username });
   if (!user)
@@ -51,5 +63,9 @@ const LoginUser = async (req, res) => {
   }
 };
 
+// VERIFY
+const VerifyUser = (req, res) => {};
+
+exports.GetAllUsers = GetAllUsers;
 exports.CreateUser = CreateUser;
 exports.LoginUser = LoginUser;
