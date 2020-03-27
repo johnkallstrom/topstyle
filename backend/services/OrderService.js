@@ -1,7 +1,7 @@
 const Order = require('../models/Order');
 
 // GET ALL
-const GetAllOrders = async (req, res) => {
+const getAllOrders = async (req, res) => {
   try {
     const orders = await Order.find();
     res.json(orders);
@@ -11,7 +11,7 @@ const GetAllOrders = async (req, res) => {
 };
 
 // CREATE
-const CreateOrder = async (req, res) => {
+const createOrder = async (req, res) => {
   const newOrder = await new Order({
     customer: req.body.customer,
     products: req.body.products,
@@ -26,5 +26,5 @@ const CreateOrder = async (req, res) => {
   }
 };
 
-exports.GetAllOrders = GetAllOrders;
-exports.CreateOrder = CreateOrder;
+exports.getAllOrders = getAllOrders;
+exports.createOrder = createOrder;

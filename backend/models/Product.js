@@ -18,6 +18,11 @@ const productSchema = new mongoose.Schema({
     required: true,
     min: 2,
     max: 250
+  },
+  price: {
+    type: Number,
+    required: true,
+    min: 0
   }
 });
 

@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 // GET ALL
-const GetAllUsers = async (req, res) => {
+const getAllUsers = async (req, res) => {
   try {
     const users = await User.find();
     res.json(users);
@@ -13,7 +13,7 @@ const GetAllUsers = async (req, res) => {
 };
 
 // CREATE
-const CreateUser = async (req, res) => {
+const createUser = async (req, res) => {
   const userExists = await User.findOne({ username: req.body.username });
   if (userExists === true)
     return res
@@ -39,7 +39,7 @@ const CreateUser = async (req, res) => {
 };
 
 // LOGIN
-const LoginUser = async (req, res) => {
+const loginUser = async (req, res) => {
   const user = await User.findOne({ username: req.body.username });
   if (!user)
     return res
@@ -61,6 +61,6 @@ const LoginUser = async (req, res) => {
   }
 };
 
-exports.GetAllUsers = GetAllUsers;
-exports.CreateUser = CreateUser;
-exports.LoginUser = LoginUser;
+exports.getAllUsers = getAllUsers;
+exports.createUser = createUser;
+exports.loginUser = loginUser;

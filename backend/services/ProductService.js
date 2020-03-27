@@ -1,7 +1,7 @@
 const Product = require('../models/Product');
 
 // GET ALL
-const GetAllProducts = async (req, res) => {
+const getAllProducts = async (req, res) => {
   try {
     const products = await Product.find();
     res.json(products);
@@ -10,8 +10,10 @@ const GetAllProducts = async (req, res) => {
   }
 };
 
+// GET BY ID
+
 // CREATE
-const CreateProduct = async (req, res) => {
+const createProduct = async (req, res) => {
   const productExists = await Product.findOne({ name: req.body.name });
   if (productExists === true) {
     return res
@@ -22,7 +24,8 @@ const CreateProduct = async (req, res) => {
   const newProduct = await new Product({
     name: req.body.name,
     category: req.body.category,
-    description: req.body.description
+    description: req.body.description,
+    price: req.body.price
   });
 
   try {
@@ -33,5 +36,5 @@ const CreateProduct = async (req, res) => {
   }
 };
 
-exports.GetAllProducts = GetAllProducts;
-exports.CreateProduct = CreateProduct;
+exports.getAllProducts = getAllProducts;
+exports.createProduct = createProduct;

@@ -1,14 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const ProductService = require('../services/ProductService');
-const VerifyUser = require('../services/VerifyService');
+const productService = require('../services/ProductService');
+const verifyUser = require('../services/VerifyService');
 
 router.get('/', async (req, res) => {
-  await ProductService.GetAllProducts(req, res);
+  await productService.getAllProducts(req, res);
 });
 
-router.post('/create', VerifyUser, async (req, res) => {
-  await ProductService.CreateProduct(req, res);
+router.post('/create', verifyUser, async (req, res) => {
+  await productService.createProduct(req, res);
 });
 
 module.exports = router;

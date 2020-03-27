@@ -1,16 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const OrderService = require('../services/OrderService');
-const VerifyUser = require('../services/VerifyService');
-
-// TODO: Get all orders by user ID
+const orderService = require('../services/OrderService');
+const verifyUser = require('../services/VerifyService');
 
 router.get('/', async (req, res) => {
-  await OrderService.GetAllOrders(req, res);
+  await orderService.getAllOrders(req, res);
 });
 
-router.post('/create', VerifyUser, async (req, res) => {
-  await OrderService.CreateOrder(req, res);
+router.post('/create', verifyUser, async (req, res) => {
+  await orderService.createOrder(req, res);
 });
 
 module.exports = router;

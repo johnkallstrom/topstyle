@@ -1,17 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const UserService = require('../services/UserService');
+const userService = require('../services/UserService');
 
 router.get('/', async (req, res) => {
-  await UserService.GetAllUsers(req, res);
+  await userService.getAllUsers(req, res);
 });
 
 router.post('/register', async (req, res) => {
-  await UserService.CreateUser(req, res);
+  await userService.createUser(req, res);
 });
 
 router.post('/login', async (req, res) => {
-  await UserService.LoginUser(req, res);
+  await userService.loginUser(req, res);
 });
 
 module.exports = router;
