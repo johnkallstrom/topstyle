@@ -45,7 +45,7 @@ const Register = () => {
       body: JSON.stringify(newUser)
     };
 
-    fetch('http://localhost:5000/user/register', requestOptions)
+    fetch('http://localhost:5000/api/user/register', requestOptions)
       .then(res => res.json())
       .then(data => console.log(data))
       .catch(err => console.log(err));

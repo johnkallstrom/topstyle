@@ -27,7 +27,7 @@ const Login = () => {
       body: JSON.stringify(user)
     };
 
-    fetch('http://localhost:5000/user/login', requestOptions)
+    fetch('http://localhost:5000/api/user/login', requestOptions)
       .then(res => res.json())
       .then(data => {
         if (data.hasOwnProperty('token') === true) {

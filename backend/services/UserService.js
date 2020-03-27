@@ -48,23 +48,18 @@ const LoginUser = async (req, res) => {
 
   const isPassValid = await bcrypt.compare(req.body.password, user.password);
 
-  if (isPassValid === false) {
+  if (!isPassValid) {
     return res.status(400).send({ message: 'The password is incorrect. ' });
   }
 
-  if (isPassValid === true) {
-    const token = jwt.sign({ user }, process.env.PRIVATE_KEY);
+  const token = jwt.sign({ user }, process.env.TOKEN_SECRET);
 
-    try {
-      res.send({ token: token });
-    } catch (err) {
-      res.send({ message: err });
-    }
+  try {
+    res.header('token', token).send({ token: token });
+  } catch (err) {
+    res.send({ message: err });
   }
 };
-
-// VERIFY
-const VerifyUser = (req, res) => {};
 
 exports.GetAllUsers = GetAllUsers;
 exports.CreateUser = CreateUser;
