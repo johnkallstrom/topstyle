@@ -10,6 +10,16 @@ const getAllOrders = async (req, res) => {
   }
 };
 
+// GET BY ID
+const getOrderById = async (req, res) => {
+  try {
+    const order = await Order.findById(req.params.id);
+    res.json(order);
+  } catch (err) {
+    res.json({ message: 'The requested order could not be found.' });
+  }
+};
+
 // CREATE
 const createOrder = async (req, res) => {
   const newOrder = await new Order({
@@ -27,4 +37,5 @@ const createOrder = async (req, res) => {
 };
 
 exports.getAllOrders = getAllOrders;
+exports.getOrderById = getOrderById;
 exports.createOrder = createOrder;

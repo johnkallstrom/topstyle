@@ -7,6 +7,10 @@ router.get('/', async (req, res) => {
   await orderService.getAllOrders(req, res);
 });
 
+router.get('/:id', verifyUser, async (req, res) => {
+  await orderService.getOrderById(req, res);
+});
+
 router.post('/create', verifyUser, async (req, res) => {
   await orderService.createOrder(req, res);
 });

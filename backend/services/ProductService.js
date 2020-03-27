@@ -11,6 +11,14 @@ const getAllProducts = async (req, res) => {
 };
 
 // GET BY ID
+const getProductById = async (req, res) => {
+  try {
+    const product = await Product.findById(req.params.id);
+    res.json(product);
+  } catch (err) {
+    res.json({ message: 'The requested product could not be found.' });
+  }
+};
 
 // CREATE
 const createProduct = async (req, res) => {
@@ -37,4 +45,5 @@ const createProduct = async (req, res) => {
 };
 
 exports.getAllProducts = getAllProducts;
+exports.getProductById = getProductById;
 exports.createProduct = createProduct;

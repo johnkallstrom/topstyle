@@ -7,6 +7,10 @@ router.get('/', async (req, res) => {
   await productService.getAllProducts(req, res);
 });
 
+router.get('/:id', verifyUser, async (req, res) => {
+  await productService.getProductById(req, res);
+});
+
 router.post('/create', verifyUser, async (req, res) => {
   await productService.createProduct(req, res);
 });
