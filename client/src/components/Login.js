@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './Login.css';
-import { Redirect } from 'react-router-dom';
 
 const Login = () => {
   const [username, setUsername] = useState('');

@@ -1,7 +1,8 @@
 :root {
-  --main-font: 'Roboto', sans-serif;
-  --main-color: #20333c;
-  --sub-color: #415766;
+  --main-font: 'Lato', sans-serif;
+  --primary-color: #2d2d2d;
+  --sub-color: #fff;
+  --accent-color: #eee;
 }
 
 * {
@@ -14,7 +15,7 @@ body {
   font-family: var(--main-font);
   font-size: 17px;
   line-height: 1.6rem;
-  color: var(--sub-color);
+  color: var(--primary-color);
 }
 
 .container {
@@ -24,24 +25,26 @@ body {
 }
 
 #header {
-  background-color: var(--main-color);
+  background-color: var(--primary-color);
 }
 
 #header .container {
-  padding: 2rem 1rem 2rem 1rem;
+  padding: 1.5rem 1rem 1.5rem 1rem;
 }
 
 #header a {
+  float: left;
   text-decoration: none;
   color: #fff;
+  text-transform: uppercase;
+}
+
+#header #branding {
+  text-transform: none;
 }
 
 #navbar {
-  background-color: var(--sub-color);
-}
-
-#navbar .container {
-  padding: 1rem;
+  float: right;
 }
 
 #navbar ul {
@@ -50,39 +53,18 @@ body {
 
 #navbar li {
   display: inline;
-  padding-right: 2rem;
 }
 
 #navbar a {
+  padding: 0 20px 0 20px;
   color: #fff;
   text-decoration: none;
 }
 
-#navbar a i {
-  color: #fff;
-}
-
-#navbar #login-link,
-#register-link {
-  float: right;
-}
-
 #footer {
-  padding: 2rem;
-  color: #fff;
+  padding: 32px;
+  margin-top: 20px;
+  color: var(--primary-color);
+  background-color: var(--accent-color);
   text-align: center;
-  background-color: var(--main-color);
-}
-
-#home {
-  padding: 2rem;
-  text-align: center;
-  margin: 0 auto;
-  width: 80%;
-}
-
-#home h1 {
-  font-size: 28px;
-  font-weight: 300;
-  line-height: 3rem;
 }

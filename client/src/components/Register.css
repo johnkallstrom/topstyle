@@ -1,7 +1,8 @@
 :root {
-  --main-font: 'Roboto', sans-serif;
-  --main-color: #20333c;
-  --sub-color: #415766;
+  --main-font: 'Lato', sans-serif;
+  --primary-color: #2d2d2d;
+  --sub-color: #fff;
+  --accent-color: #eee;
 }
 
 #register-form .container {
@@ -22,15 +23,14 @@
   width: 25%;
   margin-top: 0.5rem;
   padding: 0.8rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--main-font);
   font-size: 17px;
   border-radius: 8px;
   border: none;
-  color: #fff;
-  background-color: var(--sub-color);
+  color: var(--sub-color);
+  background-color: var(--primary-color);
 }
 
 #register-form button:hover {
   cursor: pointer;
-  background-color: var(--main-color);
 }
