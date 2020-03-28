@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './Login.css';
+import { UserContext } from '../contexts/UserContext';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const { signIn } = useContext(UserContext);
 
   const updateUsername = e => {
     setUsername(e.target.value);
@@ -30,7 +32,7 @@ const Login = () => {
     fetch('http://localhost:5000/api/user/login', requestOptions)
       .then(res => res.json())
       .then(data => {
-        localStorage.setItem('token', data.token);
+        signIn(data.token);
       })
       .catch(err => console.log(err));
 
