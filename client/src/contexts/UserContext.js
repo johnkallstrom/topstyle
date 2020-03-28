@@ -1,9 +1,18 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, useEffect, createContext } from 'react';
 
 export const UserContext = createContext();
 
 export const UserProvider = props => {
   const [loggedIn, setLoggedIn] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem('token') === null) {
+      setLoggedIn(false);
+    }
+    if (localStorage.getItem('token') !== null) {
+      setLoggedIn(true);
+    }
+  }, [loggedIn]);
 
   const signIn = token => {
     if (token !== undefined) {
