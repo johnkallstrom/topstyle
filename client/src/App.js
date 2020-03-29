@@ -5,6 +5,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Footer from './components/Footer';
 import { UserProvider } from './contexts/UserContext';
+import Search from './components/Search';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <div id='app'>
           <Header />
           <Switch>
+            <Route exact path='/' component={Search} />
             <Route path='/login' component={Login} />
             <Route path='/register' component={Register} />
           </Switch>

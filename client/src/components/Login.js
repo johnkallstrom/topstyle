@@ -1,11 +1,12 @@
 import React, { useState, useContext } from 'react';
 import './Login.css';
 import { UserContext } from '../contexts/UserContext';
+import { Redirect } from 'react-router-dom';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const { signIn } = useContext(UserContext);
+  const { signIn, loggedIn } = useContext(UserContext);
 
   const updateUsername = e => {
     setUsername(e.target.value);
@@ -42,30 +43,39 @@ const Login = () => {
 
   return (
     <div id='login-form'>
-      <div className='container'>
-        <h2>Logga in</h2>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <input
-              type='text'
-              name='username'
-              placeholder='Användarnamn'
-              value={username}
-              onChange={updateUsername}
-            />
+      {loggedIn ? (
+        <>
+          <Redirect to='/' />
+        </>
+      ) : (
+        <>
+          {' '}
+          <div className='container'>
+            <h2>Logga in</h2>
+            <form onSubmit={handleSubmit}>
+              <div>
+                <input
+                  type='text'
+                  name='username'
+                  placeholder='Användarnamn'
+                  value={username}
+                  onChange={updateUsername}
+                />
+              </div>
+              <div>
+                <input
+                  type='password'
+                  name='password'
+                  value={password}
+                  placeholder='Lösenord'
+                  onChange={updatePassword}
+                />
+              </div>
+              <button>Logga in</button>
+            </form>
           </div>
-          <div>
-            <input
-              type='password'
-              name='password'
-              value={password}
-              placeholder='Lösenord'
-              onChange={updatePassword}
-            />
-          </div>
-          <button>Logga in</button>
-        </form>
-      </div>
+        </>
+      )}
     </div>
   );
 };
