@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Search.css';
 
-const Search = () => {
+const Search = ({ handleSearch }) => {
   const [value, setValue] = useState('');
 
   const handleChange = e => {
@@ -10,7 +10,7 @@ const Search = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(value);
+    handleSearch(value);
     setValue('');
   };
 
@@ -22,13 +22,13 @@ const Search = () => {
             type='text'
             id='input'
             required
-            placeholder='Sök...'
+            placeholder='Search...'
             onFocus={e => (e.target.placeholder = '')}
-            onBlur={e => (e.target.placeholder = 'Sök...')}
+            onBlur={e => (e.target.placeholder = 'Search...')}
             value={value}
             onChange={handleChange}
           />
-          <button id='button'>
+          <button id='search-button'>
             <i className='fas fa-search'></i>
           </button>
         </form>

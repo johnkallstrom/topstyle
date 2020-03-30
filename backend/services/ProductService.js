@@ -1,16 +1,14 @@
 const Product = require('../models/Product');
 
-// GET ALL
-const getAllProducts = async (req, res) => {
+const getProducts = async (req, res) => {
   try {
     const products = await Product.find();
-    res.json(products);
+    res.send(products);
   } catch (err) {
-    res.json({ message: err });
+    res.json({ message: 'The requested products could not be found. ' });
   }
 };
 
-// GET BY ID
 const getProductById = async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
@@ -20,7 +18,15 @@ const getProductById = async (req, res) => {
   }
 };
 
-// CREATE
+const deleteProduct = async (req, res) => {
+  try {
+    const deletedProduct = await Product.findByIdAndDelete(req.params.id);
+    res.json(deletedProduct);
+  } catch (err) {
+    res.json({ message: 'The selected product could not be removed.' });
+  }
+};
+
 const createProduct = async (req, res) => {
   const productExists = await Product.findOne({ name: req.body.name });
   if (productExists === true) {
@@ -44,6 +50,7 @@ const createProduct = async (req, res) => {
   }
 };
 
-exports.getAllProducts = getAllProducts;
+exports.getProducts = getProducts;
 exports.getProductById = getProductById;
+exports.deleteProduct = deleteProduct;
 exports.createProduct = createProduct;

@@ -33,7 +33,9 @@ const Login = () => {
     fetch('http://localhost:5000/api/user/login', requestOptions)
       .then(res => res.json())
       .then(data => {
-        signIn(data.token);
+        if (data.token !== undefined) {
+          signIn(data.token);
+        }
       })
       .catch(err => console.log(err));
 
@@ -51,13 +53,13 @@ const Login = () => {
         <>
           {' '}
           <div className='container'>
-            <h2>Logga in</h2>
+            <h2>Sign in</h2>
             <form onSubmit={handleSubmit}>
               <div>
                 <input
                   type='text'
                   name='username'
-                  placeholder='Användarnamn'
+                  placeholder='Username'
                   value={username}
                   onChange={updateUsername}
                 />
@@ -67,11 +69,11 @@ const Login = () => {
                   type='password'
                   name='password'
                   value={password}
-                  placeholder='Lösenord'
+                  placeholder='Password'
                   onChange={updatePassword}
                 />
               </div>
-              <button>Logga in</button>
+              <button>Login</button>
             </form>
           </div>
         </>

@@ -60,13 +60,13 @@ const Register = () => {
   return (
     <div id='register-form'>
       <div className='container'>
-        <h2>Registrera</h2>
+        <h2>Sign up</h2>
         <form onSubmit={handleSubmit}>
           <div>
             <input
               type='text'
               name='username'
-              placeholder='Användarnamn'
+              placeholder='Username'
               value={username}
               onChange={updateUsername}
             />
@@ -76,7 +76,7 @@ const Register = () => {
               type='password'
               name='password'
               value={password}
-              placeholder='Lösenord'
+              placeholder='Password'
               onChange={updatePassword}
             />
           </div>
@@ -84,7 +84,7 @@ const Register = () => {
             <input
               type='text'
               name='firstName'
-              placeholder='Förnamn'
+              placeholder='First name'
               value={firstName}
               onChange={updateFirstName}
             />
@@ -93,7 +93,7 @@ const Register = () => {
             <input
               type='text'
               name='lastName'
-              placeholder='Efternamn'
+              placeholder='Last name'
               value={lastName}
               onChange={updateLastName}
             />
@@ -107,7 +107,7 @@ const Register = () => {
               onChange={updateEmail}
             />
           </div>
-          <button>Registrera</button>
+          <button>Register</button>
         </form>
       </div>
     </div>

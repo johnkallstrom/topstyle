@@ -12,20 +12,20 @@ const Navbar = () => {
           <>
             <li>
               <NavLink to='/login' onClick={() => signOut()}>
-                Logga ut
+                Logout
               </NavLink>
             </li>
           </>
         ) : (
           <>
             <li>
-              <NavLink to='/login'>Logga in</NavLink>
+              <NavLink to='/login'>Login</NavLink>
+            </li>
+            <li>
+              <NavLink to='/register'>Register</NavLink>
             </li>
           </>
         )}
-        <li>
-          <NavLink to='/register'>Registrera</NavLink>
-        </li>
       </ul>
     </nav>
   );

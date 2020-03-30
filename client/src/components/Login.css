@@ -3,6 +3,7 @@
   --primary-color: #2d2d2d;
   --sub-color: #fff;
   --accent-color: #eee;
+  --hover-color: #070707;
 }
 
 body {
@@ -37,4 +38,5 @@ body {
 
 #login-form button:hover {
   cursor: pointer;
+  background-color: var(--hover-color);
 }

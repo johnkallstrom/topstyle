@@ -3,11 +3,12 @@
   --primary-color: #2d2d2d;
   --sub-color: #fff;
   --accent-color: #eee;
+  --hover-color: #070707;
 }
 
 #search-form {
   margin-top: 2rem;
-  text-align: center;
+  margin-bottom: 1rem;
 }
 
 #input {
@@ -15,26 +16,27 @@
   font-size: 17px;
   padding: 0.7rem;
   border: 1px solid #ccc;
-  border-radius: 19px;
-  width: 50%;
+  border-radius: 8px;
+  width: 40%;
 }
 
 #input:focus {
   outline: none;
 }
 
-#button {
+#search-button {
   font-family: 'Ubuntu', sans-serif;
   font-size: 17px;
   padding: 0.7rem;
   border: none;
-  border-radius: 19px;
+  border-radius: 8px;
   margin-left: 0.5rem;
   width: 10%;
   background-color: var(--primary-color);
   color: var(--sub-color);
 }
 
-#button:hover {
+#search-button:hover {
   cursor: pointer;
+  background-color: var(--hover-color);
 }
