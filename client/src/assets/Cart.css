@@ -1,0 +1,16 @@
+:root {
+  --main-font: 'Lato', sans-serif;
+  --primary-color: #2d2d2d;
+  --sub-color: #fff;
+  --accent-color: #eee;
+  --hover-color: #070707;
+}
+
+#cart {
+  background-color: var(--sub-color);
+  color: var(--primary-color);
+  border-radius: 8px;
+  text-align: center;
+  padding: 2rem;
+  height: 400px;
+}

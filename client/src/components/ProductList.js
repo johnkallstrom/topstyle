@@ -1,37 +1,24 @@
-import React, { useContext, useEffect } from 'react';
-import Search from './Search';
+import React, { useContext } from 'react';
 import Product from './Product';
-import './Product.css';
 import { ProductContext } from '../contexts/ProductContext';
+import '../assets/Product.css';
 
 const Products = () => {
-  const { products, getProducts } = useContext(ProductContext);
-
-  useEffect(() => {
-    getProducts();
-  }, []);
-
-  const handleSearch = value => {
-    if (value !== null || value !== undefined) {
-    }
-  };
+  const { products } = useContext(ProductContext);
 
   return (
     <div id='product-list'>
-      <Search handleSearch={handleSearch} />
-      <div className='container'>
-        {products.map(product => {
-          return (
-            <Product
-              key={product._id}
-              name={product.name}
-              category={product.category}
-              description={product.description}
-              price={product.price}
-            />
-          );
-        })}
-      </div>
+      {products.map(product => {
+        return (
+          <Product
+            key={product._id}
+            name={product.name}
+            category={product.category}
+            description={product.description}
+            price={product.price}
+          />
+        );
+      })}
     </div>
   );
 };

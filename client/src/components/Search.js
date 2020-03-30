@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Search.css';
+import '../assets/Search.css';
 
 const Search = ({ handleSearch }) => {
   const [value, setValue] = useState('');
@@ -21,7 +21,6 @@ const Search = ({ handleSearch }) => {
           <input
             type='text'
             id='input'
-            required
             placeholder='Search...'
             onFocus={e => (e.target.placeholder = '')}
             onBlur={e => (e.target.placeholder = 'Search...')}

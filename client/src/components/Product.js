@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Product.css';
+import '../assets/Product.css';
 
 const Product = ({ name, category, description, price }) => {
   const [displayDetails, setDisplayDetails] = useState(false);

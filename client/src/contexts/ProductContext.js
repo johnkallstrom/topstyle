@@ -1,4 +1,4 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, useEffect, createContext } from 'react';
 
 export const ProductContext = createContext();
 
@@ -15,8 +15,14 @@ export const ProductProvider = props => {
       });
   };
 
+  // TODO: Get products by search query/value
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
   return (
-    <ProductContext.Provider value={{ products, getProducts }}>
+    <ProductContext.Provider value={{ products }}>
       {props.children}
     </ProductContext.Provider>
   );

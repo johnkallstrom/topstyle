@@ -14,10 +14,10 @@
 #input {
   font-family: 'Ubuntu', sans-serif;
   font-size: 17px;
-  padding: 0.7rem;
+  padding: 0.8rem;
   border: 1px solid #ccc;
   border-radius: 8px;
-  width: 40%;
+  width: 30%;
 }
 
 #input:focus {
@@ -27,11 +27,11 @@
 #search-button {
   font-family: 'Ubuntu', sans-serif;
   font-size: 17px;
-  padding: 0.7rem;
+  padding: 0.8rem;
   border: none;
   border-radius: 8px;
   margin-left: 0.5rem;
-  width: 10%;
+  width: 5%;
   background-color: var(--primary-color);
   color: var(--sub-color);
 }
@@ -39,4 +39,27 @@
 #search-button:hover {
   cursor: pointer;
   background-color: var(--hover-color);
+}
+
+@media (max-width: 992px) {
+  #input {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 17px;
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 30%;
+  }
+
+  #search-button {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 17px;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 8px;
+    margin-left: 0.5rem;
+    width: 10%;
+    background-color: var(--primary-color);
+    color: var(--sub-color);
+  }
 }
