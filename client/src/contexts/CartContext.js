@@ -5,7 +5,6 @@ export const CartContext = createContext();
 export const CartProvider = props => {
   const [items, setItems] = useState([]);
 
-  // Sets items in localStorage
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem('cart'));
     if (data !== null) {
@@ -13,7 +12,6 @@ export const CartProvider = props => {
     }
   }, []);
 
-  // Updates items in localStorage
   useEffect(() => {
     if (items !== null) {
       localStorage.setItem('cart', JSON.stringify(items));

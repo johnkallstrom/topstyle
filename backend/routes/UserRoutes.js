@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const userService = require('../services/UserService');
+const verifyToken = require('../services/VerifyService');
 
 router.get('/', async (req, res) => {
   await userService.getAllUsers(req, res);

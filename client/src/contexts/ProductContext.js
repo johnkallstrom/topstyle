@@ -15,7 +15,7 @@ export const ProductProvider = props => {
       });
   };
 
-  // TODO: Get products by search query/value
+  // TODO: Make GET request to API and fetch products based on search query
 
   useEffect(() => {
     getProducts();

@@ -26,6 +26,8 @@ export const UserProvider = props => {
     setLoggedIn(false);
   };
 
+  // TODO: Make GET request to API and fetch user profile / data
+
   return (
     <UserContext.Provider value={{ loggedIn, signIn, signOut }}>
       {props.children}

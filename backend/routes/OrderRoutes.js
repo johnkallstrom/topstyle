@@ -1,17 +1,17 @@
 const express = require('express');
 const router = express.Router();
 const orderService = require('../services/OrderService');
-const verifyUser = require('../services/VerifyService');
+const verifyToken = require('../services/VerifyService');
 
 router.get('/', async (req, res) => {
   await orderService.getAllOrders(req, res);
 });
 
-router.get('/:id', verifyUser, async (req, res) => {
+router.get('/:id', verifyToken, async (req, res) => {
   await orderService.getOrderById(req, res);
 });
 
-router.post('/create', verifyUser, async (req, res) => {
+router.post('/create', verifyToken, async (req, res) => {
   await orderService.createOrder(req, res);
 });
 
