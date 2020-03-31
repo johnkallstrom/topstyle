@@ -12,6 +12,9 @@ const Product = ({ id, name, category, description, price }) => {
     if (displayDetails === false) {
       setDisplayDetails(true);
     }
+    if (displayDetails === true) {
+      setDisplayDetails(false);
+    }
   };
 
   const handleAddProduct = () => {

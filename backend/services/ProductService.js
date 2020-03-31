@@ -3,9 +3,27 @@ const Product = require('../models/Product');
 const getProducts = async (req, res) => {
   try {
     const products = await Product.find();
-    res.send(products);
+    res.json(products);
   } catch (err) {
-    res.json({ message: 'The requested products could not be found. ' });
+    res.json({ message: err });
+  }
+};
+
+const getProductsByQuery = async (req, res) => {
+  let products = [];
+
+  if (req.query.name) {
+    products = await Product.find({
+      name: { $regex: `.*${req.query.name}.*`, $options: 'i' }
+    });
+    res.json(products);
+  } else if (req.query.category) {
+    products = await Product.find({
+      category: { $regex: `.*${req.query.category}.*`, $options: 'i' }
+    });
+    res.json(products);
+  } else {
+    res.json({ message: 'Sorry, we could not handle your request.' });
   }
 };
 
@@ -51,6 +69,7 @@ const createProduct = async (req, res) => {
 };
 
 exports.getProducts = getProducts;
+exports.getProductsByQuery = getProductsByQuery;
 exports.getProductById = getProductById;
 exports.deleteProduct = deleteProduct;
 exports.createProduct = createProduct;

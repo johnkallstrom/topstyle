@@ -2,9 +2,14 @@ const express = require('express');
 const router = express.Router();
 const productService = require('../services/ProductService');
 const verifyToken = require('../services/VerifyService');
+const Product = require('../models/Product');
 
 router.get('/', async (req, res) => {
   await productService.getProducts(req, res);
+});
+
+router.get('/find', async (req, res) => {
+  await productService.getProductsByQuery(req, res);
 });
 
 router.get('/:id', verifyToken, async (req, res) => {
