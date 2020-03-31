@@ -20,10 +20,11 @@ const Product = ({ id, name, category, description, price }) => {
       name: name,
       category: category,
       description: description,
-      price: price
+      price: price,
+      count: 1
     };
 
-    if (loggedIn === true) {
+    if (product !== null && loggedIn === true) {
       addToCart(product);
     }
   };
@@ -45,6 +46,7 @@ const Product = ({ id, name, category, description, price }) => {
       ) : (
         <>
           <p className='name'>{name}</p>
+          <p className='category'>{category}</p>
           <p className='price'>{price} &#107;&#114;</p>
         </>
       )}

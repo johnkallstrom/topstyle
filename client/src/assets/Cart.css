@@ -11,7 +11,7 @@
   color: var(--primary-color);
   border-radius: 8px;
   padding: 2rem;
-  min-height: 250px;
+  min-height: 125px;
 }
 
 #cart h2 {
@@ -28,4 +28,62 @@
   border-radius: 8px;
   border: 1px solid var(--accent-color);
   padding: 1rem;
+}
+
+#cart #delete-button {
+  margin-top: 0.5rem;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 17px;
+  padding: 0.4rem;
+  border: none;
+  border-radius: 8px;
+  width: 10%;
+  background-color: var(--primary-color);
+  color: var(--sub-color);
+}
+
+#cart #delete-button:hover {
+  cursor: pointer;
+  background-color: var(--hover-color);
+}
+
+#cart h3 {
+  margin-top: 2rem;
+}
+
+#cart .checkout-wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#cart #checkout-button {
+  text-transform: uppercase;
+  margin-top: 2rem;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 17px;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--sub-color);
+}
+
+#cart #checkout-button:hover {
+  cursor: pointer;
+  background-color: var(--hover-color);
+}
+
+@media (max-width: 992px) {
+  #cart #delete-button {
+    margin-top: 0.5rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 17px;
+    padding: 0.4rem;
+    border: none;
+    border-radius: 8px;
+    width: 15%;
+    background-color: var(--primary-color);
+    color: var(--sub-color);
+  }
 }

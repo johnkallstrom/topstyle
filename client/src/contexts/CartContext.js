@@ -5,6 +5,7 @@ export const CartContext = createContext();
 export const CartProvider = props => {
   const [items, setItems] = useState([]);
 
+  // Sets items in localStorage
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem('cart'));
     if (data !== null) {
@@ -12,6 +13,7 @@ export const CartProvider = props => {
     }
   }, []);
 
+  // Updates items in localStorage
   useEffect(() => {
     if (items !== null) {
       localStorage.setItem('cart', JSON.stringify(items));
@@ -19,18 +21,55 @@ export const CartProvider = props => {
   }, [items]);
 
   const addToCart = newItem => {
-    // TODO: Increment item amount if item already exists
     if (items.some(item => item.name === newItem.name)) {
-      return;
+      incrementItemCount(newItem.id);
+    } else {
+      setItems([newItem, ...items]);
     }
-
-    setItems([newItem, ...items]);
   };
 
-  const removeFromCart = id => {};
+  const removeFromCart = id => {
+    const newItemList = items.filter(item => {
+      return item.id !== id;
+    });
+
+    setItems(newItemList);
+  };
+
+  const incrementItemCount = id => {
+    const currentItemList = [...items];
+    currentItemList.forEach(i => {
+      if (i.id === id) {
+        i.count += 1;
+      }
+    });
+    setItems(currentItemList);
+  };
+
+  const getTotal = () => {
+    let total = 0;
+    items.forEach(item => {
+      total += item.price * item.count;
+    });
+    return total;
+  };
+
+  const calculatePrice = id => {
+    let total = 0;
+    items.forEach(item => {
+      if (item.id === id) {
+        total += item.price * item.count;
+      }
+    });
+    return total;
+  };
+
+  // TODO: Create order and make POST request to API
 
   return (
-    <CartContext.Provider value={{ items, addToCart, removeFromCart }}>
+    <CartContext.Provider
+      value={{ items, addToCart, removeFromCart, getTotal, calculatePrice }}
+    >
       {props.children}
     </CartContext.Provider>
   );
