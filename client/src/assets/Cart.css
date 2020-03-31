@@ -10,7 +10,22 @@
   background-color: var(--sub-color);
   color: var(--primary-color);
   border-radius: 8px;
-  text-align: center;
   padding: 2rem;
-  height: 400px;
+  min-height: 250px;
+}
+
+#cart h2 {
+  text-align: center;
+}
+
+#cart ul {
+  margin-top: 1.5rem;
+  list-style: none;
+}
+
+#cart .cart-item-wrapper {
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent-color);
+  padding: 1rem;
 }

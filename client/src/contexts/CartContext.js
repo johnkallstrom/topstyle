@@ -6,16 +6,32 @@ export const CartProvider = props => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    if (localStorage.getItem('cart') !== null) {
-      setItems(localStorage.getItem('cart'));
+    const data = JSON.parse(localStorage.getItem('cart'));
+    if (data !== null) {
+      setItems(data);
     }
   }, []);
 
-  const addToCart = item => {};
+  useEffect(() => {
+    if (items !== null) {
+      localStorage.setItem('cart', JSON.stringify(items));
+    }
+  }, [items]);
+
+  const addToCart = newItem => {
+    // TODO: Increment item amount if item already exists
+    if (items.some(item => item.name === newItem.name)) {
+      return;
+    }
+
+    setItems([newItem, ...items]);
+  };
 
   const removeFromCart = id => {};
 
   return (
-    <CartContext.Provider value={{}}>{props.children}</CartContext.Provider>
+    <CartContext.Provider value={{ items, addToCart, removeFromCart }}>
+      {props.children}
+    </CartContext.Provider>
   );
 };

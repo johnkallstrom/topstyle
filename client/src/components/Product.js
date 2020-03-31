@@ -1,15 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import '../assets/Product.css';
+import { CartContext } from '../contexts/CartContext';
+import { UserContext } from '../contexts/UserContext';
 
-const Product = ({ name, category, description, price }) => {
+const Product = ({ id, name, category, description, price }) => {
   const [displayDetails, setDisplayDetails] = useState(false);
+  const { addToCart } = useContext(CartContext);
+  const { loggedIn } = useContext(UserContext);
 
   const handleProductDetails = () => {
     if (displayDetails === false) {
       setDisplayDetails(true);
     }
-    if (displayDetails === true) {
-      setDisplayDetails(false);
+  };
+
+  const handleAddProduct = () => {
+    const product = {
+      id: id,
+      name: name,
+      category: category,
+      description: description,
+      price: price
+    };
+
+    if (loggedIn === true) {
+      addToCart(product);
     }
   };
 
@@ -22,7 +37,9 @@ const Product = ({ name, category, description, price }) => {
           <p className='description'>{description}</p>
           <p className='price'>{price} &#107;&#114;</p>
           <div>
-            <button id='add-button'>Add</button>
+            <button id='add-button' onClick={handleAddProduct}>
+              Add
+            </button>
           </div>
         </>
       ) : (

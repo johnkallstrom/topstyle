@@ -68,3 +68,11 @@ body {
   background-color: var(--accent-color);
   text-align: center;
 }
+
+@media (max-width: 992px) {
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+}

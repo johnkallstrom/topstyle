@@ -12,6 +12,7 @@ const Products = () => {
         return (
           <Product
             key={product._id}
+            id={product._id}
             name={product.name}
             category={product.category}
             description={product.description}
