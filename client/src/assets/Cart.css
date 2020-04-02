@@ -14,8 +14,25 @@
   min-height: 125px;
 }
 
-#cart h2 {
+#cart .cart-title {
+  text-transform: uppercase;
   text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+#cart hr {
+  border: 2px solid var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+#cart .cart-icon {
+  margin-top: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#cart h3 {
+  margin-top: 1rem;
 }
 
 #cart ul {
@@ -47,8 +64,10 @@
   background-color: var(--hover-color);
 }
 
-#cart h3 {
-  margin-top: 2rem;
+#cart p {
+  text-align: center;
+  font-size: 20px;
+  padding-bottom: 0.7rem;
 }
 
 #cart .checkout-wrapper {

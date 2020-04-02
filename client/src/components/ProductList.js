@@ -8,18 +8,26 @@ const ProductList = () => {
 
   return (
     <div id='product-list'>
-      {products.map(product => {
-        return (
-          <Product
-            key={product._id}
-            id={product._id}
-            name={product.name}
-            category={product.category}
-            description={product.description}
-            price={product.price}
-          />
-        );
-      })}
+      {products.length ? (
+        <>
+          {products.map(product => {
+            return (
+              <Product
+                key={product._id}
+                id={product._id}
+                name={product.name}
+                category={product.category}
+                description={product.description}
+                price={product.price}
+              />
+            );
+          })}
+        </>
+      ) : (
+        <>
+          <h3>Nothing matches your search.</h3>
+        </>
+      )}
     </div>
   );
 };

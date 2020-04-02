@@ -3,7 +3,7 @@ import '../assets/Search.css';
 import { ProductContext } from '../contexts/ProductContext';
 
 const Search = () => {
-  const { getProductsByName } = useContext(ProductContext);
+  const { getProductsByName, getProducts } = useContext(ProductContext);
   const [value, setValue] = useState('');
 
   const handleChange = e => {
@@ -12,6 +12,11 @@ const Search = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
+
+    if (value === '') {
+      getProducts();
+    }
+
     getProductsByName(value);
     setValue('');
   };
