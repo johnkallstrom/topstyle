@@ -62,11 +62,40 @@ export const CartProvider = props => {
     return total;
   };
 
-  // TODO: Create order and make POST request to API
+  const createOrder = order => {
+    const token = localStorage.getItem('token');
+
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        token: token,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(order)
+    };
+
+    fetch('http://localhost:5000/api/order/create', requestOptions)
+      .then(res => res.json())
+      .then(data => console.log(data))
+      .catch(err => console.log(err));
+  };
+
+  const clearCart = () => {
+    localStorage.removeItem('cart');
+    setItems([]);
+  };
 
   return (
     <CartContext.Provider
-      value={{ items, addToCart, removeFromCart, getTotal, calculatePrice }}
+      value={{
+        items,
+        addToCart,
+        removeFromCart,
+        getTotal,
+        calculatePrice,
+        createOrder,
+        clearCart
+      }}
     >
       {props.children}
     </CartContext.Provider>

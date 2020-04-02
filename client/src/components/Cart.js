@@ -1,12 +1,34 @@
 import React, { useContext } from 'react';
 import '../assets/Cart.css';
 import { CartContext } from '../contexts/CartContext';
+import { UserContext } from '../contexts/UserContext';
 import '../assets/Categories.css';
 
 const Cart = () => {
-  const { items, removeFromCart, getTotal, calculatePrice } = useContext(
-    CartContext
-  );
+  const { currentUser, loggedIn } = useContext(UserContext);
+  const {
+    items,
+    removeFromCart,
+    getTotal,
+    calculatePrice,
+    createOrder,
+    clearCart
+  } = useContext(CartContext);
+
+  const addOrder = () => {
+    const order = {
+      customer: `${currentUser.firstName} ${currentUser.lastName}`,
+      products: items,
+      total: getTotal()
+    };
+
+    if (loggedIn === true && items.length !== 0) {
+      createOrder(order);
+      clearCart();
+    }
+  };
+
+  // TODO: Display placed order, modal?
 
   return (
     <div id='cart'>
@@ -30,7 +52,9 @@ const Cart = () => {
       </ul>
       <h3>Total: {getTotal()} &#107;&#114;</h3>
       <div className='checkout-wrapper'>
-        <button id='checkout-button'>Order</button>
+        <button id='checkout-button' onClick={() => addOrder()}>
+          Order
+        </button>
       </div>
     </div>
   );

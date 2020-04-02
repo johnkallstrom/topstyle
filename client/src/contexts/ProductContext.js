@@ -34,7 +34,6 @@ export const ProductProvider = props => {
     fetch(`http://localhost:5000/api/product/find?category=${value}`)
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         if (data !== null || data !== undefined) {
           setProducts(data);
         }

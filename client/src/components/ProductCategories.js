@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ProductContext } from '../contexts/ProductContext';
 
-const Categories = () => {
+const ProductCategories = () => {
   const { getProductsByCategory, getProducts } = useContext(ProductContext);
 
   return (
@@ -27,4 +27,4 @@ const Categories = () => {
   );
 };
 
-export default Categories;
+export default ProductCategories;
