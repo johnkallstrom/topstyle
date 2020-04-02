@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import Product from './Product';
-import { ProductContext } from '../contexts/ProductContext';
 import '../assets/Product.css';
+import { ProductContext } from '../contexts/ProductContext';
 
-const Products = () => {
+const ProductList = () => {
   const { products } = useContext(ProductContext);
 
   return (
@@ -24,4 +24,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default ProductList;

@@ -8,6 +8,7 @@ import { UserProvider } from './contexts/UserContext';
 import { ProductProvider } from './contexts/ProductContext';
 import { CartProvider } from './contexts/CartContext';
 import Home from './components/Home';
+import UserProfile from './components/UserProfile';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
               <Header />
               <Switch>
                 <Route exact path='/' component={Home} />
+                <Route path='/account' component={UserProfile} />
                 <Route path='/login' component={Login} />
                 <Route path='/register' component={Register} />
               </Switch>

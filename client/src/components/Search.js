@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import '../assets/Search.css';
+import { ProductContext } from '../contexts/ProductContext';
 
-const Search = ({ handleSearch }) => {
+const Search = () => {
+  const { getProductsByName } = useContext(ProductContext);
   const [value, setValue] = useState('');
 
   const handleChange = e => {
@@ -10,7 +12,7 @@ const Search = ({ handleSearch }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    handleSearch(value);
+    getProductsByName(value);
     setValue('');
   };
 

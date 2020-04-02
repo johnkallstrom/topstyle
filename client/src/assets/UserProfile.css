@@ -1,0 +1,20 @@
+:root {
+  --main-font: 'Lato', sans-serif;
+  --primary-color: #2d2d2d;
+  --sub-color: #fff;
+  --accent-color: #eee;
+  --hover-color: #070707;
+}
+
+.user-profile-wrapper {
+  width: 50%;
+  border-radius: 8px;
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: var(--sub-color);
+  color: var(--primary-color);
+}
+
+.user-profile-wrapper h2 {
+  margin-bottom: 1rem;
+}

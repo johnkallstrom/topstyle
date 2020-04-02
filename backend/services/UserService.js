@@ -2,12 +2,13 @@ const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-const getAllUsers = async (req, res) => {
-  try {
-    const users = await User.find();
-    res.json(users);
-  } catch (err) {
-    res.json({ message: err });
+const getUser = async (req, res) => {
+  if (req.user) {
+    res.json(req.user);
+  } else {
+    res
+      .status(400)
+      .send({ Message: 'Sorry, we could not find the requested user.' });
   }
 };
 
@@ -58,6 +59,6 @@ const loginUser = async (req, res) => {
   }
 };
 
-exports.getAllUsers = getAllUsers;
+exports.getUser = getUser;
 exports.createUser = createUser;
 exports.loginUser = loginUser;

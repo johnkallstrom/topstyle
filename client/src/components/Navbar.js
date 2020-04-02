@@ -3,13 +3,16 @@ import { NavLink, withRouter } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
 
 const Navbar = () => {
-  const { loggedIn, signOut } = useContext(UserContext);
+  const { loggedIn, signOut, currentUser } = useContext(UserContext);
 
   return (
     <nav id='navbar'>
       <ul>
         {loggedIn ? (
           <>
+            <li>
+              <NavLink to='/account'>{currentUser.username}</NavLink>
+            </li>
             <li>
               <NavLink to='/login' onClick={() => signOut()}>
                 Logout
