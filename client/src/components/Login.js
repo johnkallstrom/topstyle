@@ -36,6 +36,8 @@ const Login = () => {
       .then(data => {
         if (data.token !== undefined) {
           signIn(data.token);
+          setUsername('');
+          setPassword('');
         } else {
           setDisplayError(true);
         }
@@ -43,9 +45,6 @@ const Login = () => {
       .catch(err => {
         console.log(err);
       });
-
-    setUsername('');
-    setPassword('');
   };
 
   return (

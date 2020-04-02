@@ -20,6 +20,7 @@ const Modal = ({ handleCloseModal, order, orderCompleted }) => {
           {orderCompleted ? (
             <div id='order-confirmation'>
               <h3>Thanks for your order!</h3>
+              <hr></hr>
               <ul>
                 {order.products.map(product => {
                   return (

@@ -5,6 +5,8 @@ import '../assets/UserProfile.css';
 const UserProfile = () => {
   const { currentUser } = useContext(UserContext);
 
+  // TODO: Style user profile
+
   return (
     <div id='user-profile'>
       <div className='container'>

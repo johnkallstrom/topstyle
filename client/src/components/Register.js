@@ -53,15 +53,14 @@ const Register = () => {
           setDisplayError(true);
         } else {
           console.log(data);
+          setFirstName('');
+          setLastName('');
+          setEmail('');
+          setUsername('');
+          setPassword('');
         }
       })
       .catch(err => console.log(err));
-
-    setFirstName('');
-    setLastName('');
-    setEmail('');
-    setUsername('');
-    setPassword('');
   };
 
   return (
