@@ -31,9 +31,12 @@ const Product = ({ id, name, category, description, price }) => {
   };
 
   return (
-    <div id='product' onClick={handleProductDetails}>
+    <div id='product'>
       {displayDetails ? (
         <>
+          <span id='show-details' onClick={handleProductDetails}>
+            &#8722;
+          </span>
           <p className='name'>{name}</p>
           <p className='category'>{category}</p>
           <p className='description'>{description}</p>
@@ -46,6 +49,9 @@ const Product = ({ id, name, category, description, price }) => {
         </>
       ) : (
         <>
+          <span id='show-details' onClick={handleProductDetails}>
+            &#43;
+          </span>
           <p className='name'>{name}</p>
           <p className='category'>{category}</p>
           <p className='price'>{price} &#107;&#114;</p>

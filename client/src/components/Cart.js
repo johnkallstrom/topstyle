@@ -29,6 +29,8 @@ const Cart = () => {
       return;
     }
 
+    console.log(order);
+
     if (items.length !== 0) {
       createOrder(order);
       clearCart();

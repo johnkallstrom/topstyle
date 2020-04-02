@@ -15,10 +15,6 @@
   width: 90%;
 }
 
-#product:hover {
-  cursor: pointer;
-}
-
 #product .name,
 .category,
 .description,
@@ -41,6 +37,19 @@
 #add-button:hover {
   cursor: pointer;
   background-color: var(--hover-color);
+}
+
+#show-details {
+  color: var(--primary-color);
+  float: right;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+#show-details:hover {
+  color: var(--hover-color);
+  text-decoration: none;
+  cursor: pointer;
 }
 
 @media (max-width: 992px) {
