@@ -25,7 +25,9 @@ const ProductList = () => {
         </>
       ) : (
         <>
-          <h3>Nothing matches your search.</h3>
+          <div id='no-search-result'>
+            <h3>Nothing matches your search.</h3>
+          </div>
         </>
       )}
     </div>

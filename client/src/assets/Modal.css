@@ -21,16 +21,11 @@
   background-color: var(--sub-color);
   padding: 2rem;
   margin: 15% auto;
-  width: 25%;
+  width: 35%;
   border-radius: 8px;
-  text-align: center;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.3), 0 7px 20px 0 rgba(0, 0, 0, 0.3);
   animation-name: modalopen;
   animation-duration: 0.5s;
-}
-
-#content p {
-  font-size: 24px;
 }
 
 .modal-show {
@@ -55,6 +50,55 @@
   cursor: pointer;
 }
 
+#sign-in-wrapper {
+  text-align: center;
+}
+
+#sign-in-wrapper p {
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
+
+#sign-in-button {
+  width: 60%;
+  margin-top: 1rem;
+  padding: 1rem;
+  font-family: var(--main-font);
+  font-size: 17px;
+  border-radius: 8px;
+  border: none;
+  color: var(--sub-color);
+  background-color: var(--primary-color);
+  text-transform: uppercase;
+}
+
+#sign-in-button:hover {
+  cursor: pointer;
+  background-color: var(--hover-color);
+}
+
+#order-confirmation h3 {
+  font-size: 32px;
+  margin-top: 0rem;
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+#order-confirmation ul {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+#order-confirmation #product-wrapper {
+  margin-bottom: 1rem;
+}
+
+#order-confirmation #order-total {
+  font-size: 22px;
+  font-weight: bold;
+}
+
 @keyframes modalopen {
   from {
     opacity: 0;
@@ -71,7 +115,6 @@
     margin: 30% auto;
     width: 50%;
     border-radius: 8px;
-    text-align: center;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.3), 0 7px 20px 0 rgba(0, 0, 0, 0.3);
     animation-name: modalopen;
     animation-duration: 0.5s;

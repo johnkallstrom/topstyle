@@ -4,6 +4,7 @@
   --sub-color: #fff;
   --accent-color: #eee;
   --hover-color: #070707;
+  --error-color: #ae2c3e;
 }
 
 body {
@@ -12,6 +13,32 @@ body {
 
 #login-form .container {
   padding: 2rem 0rem 2rem 0rem;
+}
+
+.login-error {
+  width: 30%;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  background-color: var(--error-color);
+  border-radius: 8px;
+}
+
+.login-error p {
+  color: var(--sub-color);
+}
+
+#close-error {
+  color: var(--sub-color);
+  float: right;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+#close-error:hover,
+#close-error:focus {
+  color: var(--hover-color);
+  text-decoration: none;
+  cursor: pointer;
 }
 
 #login-form input {

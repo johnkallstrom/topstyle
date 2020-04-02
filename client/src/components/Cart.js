@@ -7,6 +7,8 @@ import Modal from './Modal';
 
 const Cart = () => {
   const [displayModal, setDisplayModal] = useState(false);
+  const [orderCompleted, setOrderCompleted] = useState(false);
+  const [order, setOrder] = useState({});
   const { currentUser, loggedIn } = useContext(UserContext);
   const {
     items,
@@ -24,16 +26,20 @@ const Cart = () => {
       total: getTotal()
     };
 
+    if (order !== null) {
+      setOrder(order);
+    }
+
     if (loggedIn === false) {
       setDisplayModal(true);
       return;
     }
 
-    console.log(order);
-
     if (items.length !== 0) {
       createOrder(order);
       clearCart();
+      setOrderCompleted(true);
+      setDisplayModal(true);
     }
   };
 
@@ -49,7 +55,11 @@ const Cart = () => {
       <hr></hr>
       {displayModal && (
         <>
-          <Modal handleCloseModal={handleCloseModal} />
+          <Modal
+            handleCloseModal={handleCloseModal}
+            order={order}
+            orderCompleted={orderCompleted}
+          />
         </>
       )}
       {items.length ? (
@@ -77,7 +87,7 @@ const Cart = () => {
           <h2 className='cart-icon'>
             <i className='fas fa-shopping-cart fa-2x'></i>
           </h2>
-          <p>Your cart is empty.</p>
+          <p id='cart-message'>Your cart is empty.</p>
         </>
       )}
       <h3 className='cart-total'>Total: {getTotal()} &#107;&#114;</h3>

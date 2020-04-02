@@ -64,7 +64,7 @@
   background-color: var(--hover-color);
 }
 
-#cart p {
+#cart #cart-message {
   text-align: center;
   font-size: 20px;
   padding-bottom: 0.7rem;

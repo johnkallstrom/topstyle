@@ -22,6 +22,14 @@
   padding-bottom: 0.5rem;
 }
 
+#no-search-result {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--sub-color);
+  border-radius: 8px;
+  width: 70%;
+}
+
 #add-button {
   width: 25%;
   margin-top: 0.5rem;
@@ -72,5 +80,13 @@
     border: none;
     color: var(--sub-color);
     background-color: var(--primary-color);
+  }
+
+  #no-search-result {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--sub-color);
+    border-radius: 8px;
+    width: 80%;
   }
 }

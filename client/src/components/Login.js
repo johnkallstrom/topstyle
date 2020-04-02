@@ -6,6 +6,7 @@ import { Redirect } from 'react-router-dom';
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [displayError, setDisplayError] = useState(false);
   const { signIn, loggedIn } = useContext(UserContext);
 
   const updateUsername = e => {
@@ -35,9 +36,13 @@ const Login = () => {
       .then(data => {
         if (data.token !== undefined) {
           signIn(data.token);
+        } else {
+          setDisplayError(true);
         }
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        console.log(err);
+      });
 
     setUsername('');
     setPassword('');
@@ -54,6 +59,14 @@ const Login = () => {
           {' '}
           <div className='container'>
             <h2>Sign in</h2>
+            {displayError && (
+              <div className='login-error'>
+                <span id='close-error' onClick={() => setDisplayError(false)}>
+                  &times;
+                </span>
+                <p>You have entered an invalid username or password.</p>
+              </div>
+            )}
             <form onSubmit={handleSubmit}>
               <div>
                 <input
