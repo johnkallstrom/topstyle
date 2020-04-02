@@ -7,6 +7,7 @@ const Register = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
+  const [displayError, setDisplayError] = useState(false);
 
   const updateFirstName = e => {
     setFirstName(e.target.value);
@@ -47,7 +48,13 @@ const Register = () => {
 
     fetch('http://localhost:5000/api/user/register', requestOptions)
       .then(res => res.json())
-      .then(data => console.log(data))
+      .then(data => {
+        if (!data.user) {
+          setDisplayError(true);
+        } else {
+          console.log(data);
+        }
+      })
       .catch(err => console.log(err));
 
     setFirstName('');
@@ -61,6 +68,14 @@ const Register = () => {
     <div id='register-form'>
       <div className='container'>
         <h2>Sign up</h2>
+        {displayError && (
+          <div className='register-error'>
+            <span id='close-error' onClick={() => setDisplayError(false)}>
+              &times;
+            </span>
+            <p>Registration failed. Please fill out the entire form.</p>
+          </div>
+        )}
         <form onSubmit={handleSubmit}>
           <div>
             <input

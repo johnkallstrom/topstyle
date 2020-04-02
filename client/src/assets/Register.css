@@ -37,6 +37,32 @@
   background-color: var(--hover-color);
 }
 
+.register-error {
+  width: 30%;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  background-color: var(--error-color);
+  border-radius: 8px;
+}
+
+.register-error p {
+  color: var(--sub-color);
+}
+
+#close-error {
+  color: var(--sub-color);
+  float: right;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+#close-error:hover,
+#close-error:focus {
+  color: var(--hover-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
 @media (max-width: 992px) {
   #register-form input {
     width: 50%;
