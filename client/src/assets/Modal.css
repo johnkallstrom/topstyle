@@ -54,9 +54,10 @@
   text-align: center;
 }
 
-#sign-in-wrapper p {
-  font-size: 24px;
+#sign-in-wrapper h3 {
+  font-size: 28px;
   margin-bottom: 1rem;
+  font-weight: 300;
 }
 
 #sign-in-button {

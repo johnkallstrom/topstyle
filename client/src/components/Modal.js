@@ -34,12 +34,12 @@ const Modal = ({ handleCloseModal, order, orderCompleted }) => {
             </div>
           ) : (
             <div id='sign-in-wrapper'>
-              <p>Please sign in to place an order.</p>
+              <h3>Go and sign in to start shopping!</h3>
               <button
                 id='sign-in-button'
                 onClick={() => setRedirectToLogin(true)}
               >
-                Go to login
+                Login
               </button>
             </div>
           )}
