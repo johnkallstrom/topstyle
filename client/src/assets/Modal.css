@@ -120,4 +120,11 @@
     animation-name: modalopen;
     animation-duration: 0.5s;
   }
+
+  #sign-in-wrapper h3 {
+    font-size: 28px;
+    margin-bottom: 1rem;
+    font-weight: 300;
+    line-height: 2.5rem;
+  }
 }
