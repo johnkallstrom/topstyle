@@ -16,5 +16,18 @@
 }
 
 .user-profile-wrapper h2 {
-  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.user-order-wrapper {
+  width: 50%;
+  border-radius: 8px;
+  margin-top: 1rem;
+  padding: 2rem;
+  background-color: var(--sub-color);
+  color: var(--primary-color);
+}
+
+.user-order-wrapper h2 {
+  text-align: center;
 }

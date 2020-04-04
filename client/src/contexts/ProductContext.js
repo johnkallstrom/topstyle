@@ -2,7 +2,7 @@ import React, { useState, useEffect, createContext } from 'react';
 
 export const ProductContext = createContext();
 
-export const ProductProvider = props => {
+export const ProductProvider = (props) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -11,28 +11,28 @@ export const ProductProvider = props => {
 
   const getProducts = () => {
     fetch('http://localhost:5000/api/product')
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         if (data !== null || data !== undefined) {
           setProducts(data);
         }
       });
   };
 
-  const getProductsByName = value => {
+  const getProductsByName = (value) => {
     fetch(`http://localhost:5000/api/product/find?name=${value}`)
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         if (data !== null || data !== undefined) {
           setProducts(data);
         }
       });
   };
 
-  const getProductsByCategory = value => {
+  const getProductsByCategory = (value) => {
     fetch(`http://localhost:5000/api/product/find?category=${value}`)
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         if (data !== null || data !== undefined) {
           setProducts(data);
         }
@@ -45,7 +45,7 @@ export const ProductProvider = props => {
         products,
         getProducts,
         getProductsByName,
-        getProductsByCategory
+        getProductsByCategory,
       }}
     >
       {props.children}

@@ -6,18 +6,21 @@ const Search = () => {
   const { getProductsByName, getProducts } = useContext(ProductContext);
   const [value, setValue] = useState('');
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setValue(e.target.value);
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     if (value === '') {
       getProducts();
+      console.log('getProducts ran.');
+    } else {
+      getProductsByName(value);
+      console.log('getProductsByName ran.');
     }
 
-    getProductsByName(value);
     setValue('');
   };
 
@@ -29,8 +32,8 @@ const Search = () => {
             type='text'
             id='input'
             placeholder='Search...'
-            onFocus={e => (e.target.placeholder = '')}
-            onBlur={e => (e.target.placeholder = 'Search...')}
+            onFocus={(e) => (e.target.placeholder = '')}
+            onBlur={(e) => (e.target.placeholder = 'Search...')}
             value={value}
             onChange={handleChange}
           />

@@ -1,0 +1,19 @@
+:root {
+  --main-font: 'Lato', sans-serif;
+  --primary-color: #2d2d2d;
+  --sub-color: #fff;
+  --accent-color: #eee;
+  --hover-color: #070707;
+}
+
+#order-list ul {
+  list-style: none;
+  margin-top: 1.5rem;
+}
+
+.order-wrapper {
+  border-radius: 8px;
+  border: 1px solid var(--accent-color);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}

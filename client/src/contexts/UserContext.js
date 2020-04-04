@@ -1,8 +1,7 @@
 import React, { useState, useEffect, createContext } from 'react';
-
 export const UserContext = createContext();
 
-export const UserProvider = props => {
+export const UserProvider = (props) => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
 
@@ -16,7 +15,7 @@ export const UserProvider = props => {
     }
   }, [loggedIn]);
 
-  const signIn = token => {
+  const signIn = (token) => {
     if (token !== undefined) {
       localStorage.setItem('token', token);
     }
@@ -35,20 +34,26 @@ export const UserProvider = props => {
       method: 'GET',
       headers: {
         token: token,
-        'Content-Type': 'application/json'
-      }
+        'Content-Type': 'application/json',
+      },
     };
 
     fetch('http://localhost:5000/api/user', requestOptions)
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         setCurrentUser(data.user);
       });
   };
 
   return (
     <UserContext.Provider
-      value={{ loggedIn, signIn, signOut, getUser, currentUser }}
+      value={{
+        loggedIn,
+        signIn,
+        signOut,
+        getUser,
+        currentUser,
+      }}
     >
       {props.children}
     </UserContext.Provider>
