@@ -16,14 +16,14 @@ const Cart = () => {
     getTotal,
     calculatePrice,
     createOrder,
-    clearCart
+    clearCart,
   } = useContext(CartContext);
 
   const addOrder = () => {
     const order = {
       customer: `${currentUser.firstName} ${currentUser.lastName}`,
       products: items,
-      total: getTotal()
+      total: getTotal(),
     };
 
     if (order !== null) {
@@ -65,7 +65,7 @@ const Cart = () => {
       {items.length ? (
         <>
           <ul>
-            {items.map(item => {
+            {items.map((item) => {
               return (
                 <div key={item.id} className='cart-item-wrapper'>
                   <li>{item.name}</li>

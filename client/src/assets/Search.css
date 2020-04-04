@@ -13,10 +13,10 @@
 #input {
   font-family: 'Ubuntu', sans-serif;
   font-size: 17px;
-  padding: 0.8rem;
+  padding: 0.9rem;
   border: 1px solid #ccc;
   border-radius: 8px;
-  width: 30%;
+  width: 40%;
 }
 
 #input:focus {
@@ -26,11 +26,11 @@
 #search-button {
   font-family: 'Ubuntu', sans-serif;
   font-size: 17px;
-  padding: 0.8rem;
+  padding: 0.9rem;
   border: none;
   border-radius: 8px;
   margin-left: 0.5rem;
-  width: 5%;
+  width: 8%;
   background-color: var(--primary-color);
   color: var(--sub-color);
 }
@@ -44,20 +44,20 @@
   #input {
     font-family: 'Ubuntu', sans-serif;
     font-size: 17px;
-    padding: 0.7rem;
+    padding: 0.9rem;
     border: 1px solid #ccc;
     border-radius: 8px;
-    width: 30%;
+    width: 40%;
   }
 
   #search-button {
     font-family: 'Ubuntu', sans-serif;
     font-size: 17px;
-    padding: 0.7rem;
+    padding: 0.9rem;
     border: none;
     border-radius: 8px;
     margin-left: 0.5rem;
-    width: 7%;
+    width: 10%;
     background-color: var(--primary-color);
     color: var(--sub-color);
   }

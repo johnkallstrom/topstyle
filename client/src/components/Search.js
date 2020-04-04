@@ -15,10 +15,8 @@ const Search = () => {
 
     if (value === '') {
       getProducts();
-      console.log('getProducts ran.');
     } else {
       getProductsByName(value);
-      console.log('getProductsByName ran.');
     }
 
     setValue('');
