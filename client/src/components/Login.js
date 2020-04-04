@@ -9,31 +9,33 @@ const Login = () => {
   const [displayError, setDisplayError] = useState(false);
   const { signIn, loggedIn } = useContext(UserContext);
 
-  const updateUsername = e => {
+  const updateUsername = (e) => {
     setUsername(e.target.value);
   };
 
-  const updatePassword = e => {
+  const updatePassword = (e) => {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = e => {
+  // TODO: Move out fetch POST logic to a repository module or context
+
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     const user = {
       username: username,
-      password: password
+      password: password,
     };
 
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(user)
+      body: JSON.stringify(user),
     };
 
     fetch('http://localhost:5000/api/user/login', requestOptions)
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         if (data.token !== undefined) {
           signIn(data.token);
           setUsername('');
@@ -42,7 +44,7 @@ const Login = () => {
           setDisplayError(true);
         }
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   };

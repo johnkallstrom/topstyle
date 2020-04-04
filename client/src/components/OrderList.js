@@ -9,10 +9,10 @@ const OrderList = ({ currentUser }) => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
+        data.reverse();
         let result = filterOrderData(data);
         setOrders(result);
       });
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentUser]);
 
@@ -23,6 +23,9 @@ const OrderList = ({ currentUser }) => {
     );
     return result;
   };
+
+  // TODO: Format dates in order list
+  // TODO: Dates are in string, convert to date objects and then format
 
   return (
     <div id='order-list'>
