@@ -6,6 +6,7 @@ import { Redirect } from 'react-router-dom';
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const [displayError, setDisplayError] = useState(false);
   const { signIn, loggedIn } = useContext(UserContext);
 
@@ -25,7 +26,26 @@ const Login = () => {
       password: password,
     };
 
-    signIn(user);
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(user),
+    };
+
+    fetch('http://localhost:5000/api/user/login', requestOptions)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.hasOwnProperty('token')) {
+          signIn(data.token);
+        } else {
+          setErrorMessage(data.message);
+          setDisplayError(true);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
     setUsername('');
     setPassword('');
   };
@@ -46,7 +66,7 @@ const Login = () => {
                 <span id='close-error' onClick={() => setDisplayError(false)}>
                   &times;
                 </span>
-                <p>You have entered an invalid username or password.</p>
+                <p>{errorMessage}</p>
               </div>
             )}
             <form onSubmit={handleSubmit}>

@@ -15,24 +15,9 @@ export const UserProvider = (props) => {
     }
   }, [loggedIn]);
 
-  const signIn = (user) => {
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(user),
-    };
-
-    fetch('http://localhost:5000/api/user/login', requestOptions)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.token !== undefined) {
-          localStorage.setItem('token', data.token);
-          setLoggedIn(true);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  const signIn = (token) => {
+    localStorage.setItem('token', token);
+    setLoggedIn(true);
   };
 
   const signOut = () => {
