@@ -1,0 +1,40 @@
+:root {
+  --main-font: 'Lato', sans-serif;
+  --primary-color: #2d2d2d;
+  --sub-color: #fff;
+  --accent-color: #eee;
+  --hover-color: #070707;
+}
+
+#order {
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+#order ul {
+  list-style: none;
+  margin-top: 0.5rem;
+}
+
+#order .product-wrapper {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+}
+
+#order .product-wrapper:last-child {
+  margin-bottom: 0rem;
+}
+
+#order .products {
+  margin-bottom: 0.5rem;
+}
+
+#order .products,
+.date,
+.total {
+  font-weight: bold;
+}

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../assets/OrderList.css';
-import Moment from 'react-moment';
+import Order from './Order';
 
 const OrderList = ({ currentUser }) => {
   const [orders, setOrders] = useState([]);
@@ -27,18 +26,26 @@ const OrderList = ({ currentUser }) => {
 
   return (
     <div id='order-list'>
-      <ul>
-        {orders.map((order) => {
-          return (
-            <div key={order._id} className='order-wrapper'>
-              <li>
-                <Moment format='YYYY-MM-DD HH:mm'>{order.date}</Moment>
-              </li>
-              <li>Total: {order.total} kr</li>
-            </div>
-          );
-        })}
-      </ul>
+      {orders.length ? (
+        <>
+          {orders.map((order) => {
+            return (
+              <Order
+                key={order._id}
+                date={order.date}
+                total={order.total}
+                products={order.products}
+              />
+            );
+          })}
+        </>
+      ) : (
+        <>
+          <div id='empty-order-list'>
+            <h3>No orders could be found.</h3>
+          </div>
+        </>
+      )}
     </div>
   );
 };
