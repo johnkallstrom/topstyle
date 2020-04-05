@@ -22,7 +22,7 @@ const Order = ({ date, total, products }) => {
             &#8722;
           </span>
           <p>
-            <span className='date'>Datum:</span>{' '}
+            <span className='date'>Date:</span>{' '}
             <Moment format='YYYY-MM-DD HH:mm'>{date}</Moment>
           </p>
           <ul>
@@ -49,7 +49,7 @@ const Order = ({ date, total, products }) => {
             &#43;
           </span>
           <p>
-            <span className='date'>Datum:</span>{' '}
+            <span className='date'>Date:</span>{' '}
             <Moment format='YYYY-MM-DD HH:mm'>{date}</Moment>
           </p>
           <p>

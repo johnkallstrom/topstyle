@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer id='footer'>
+    <footer className='footer'>
       <p>TopStyle &copy; 2020</p>
     </footer>
   );

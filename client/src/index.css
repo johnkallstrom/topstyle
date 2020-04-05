@@ -61,7 +61,7 @@ body {
   text-decoration: none;
 }
 
-#footer {
+.footer {
   padding: 32px;
   margin-top: 20px;
   color: var(--primary-color);

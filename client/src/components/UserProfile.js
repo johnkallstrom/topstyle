@@ -15,6 +15,7 @@ const UserProfile = () => {
           </h2>
         </div>
         <div className='user-order-wrapper'>
+          <h2>Your order history</h2>
           <OrderList currentUser={currentUser} />
         </div>
       </div>
