@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../assets/OrderList.css';
+import Moment from 'react-moment';
 
 const OrderList = ({ currentUser }) => {
   const [orders, setOrders] = useState([]);
@@ -24,17 +25,15 @@ const OrderList = ({ currentUser }) => {
     return result;
   };
 
-  // TODO: Format dates in order list
-  // TODO: Dates are in string, convert to date objects and then format
-
   return (
     <div id='order-list'>
       <ul>
         {orders.map((order) => {
           return (
             <div key={order._id} className='order-wrapper'>
-              <li>{order.date}</li>
-              <li>{order.customer}</li>
+              <li>
+                <Moment format='YYYY-MM-DD HH:mm'>{order.date}</Moment>
+              </li>
               <li>Total: {order.total} kr</li>
             </div>
           );
