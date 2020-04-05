@@ -13,7 +13,7 @@ const Navbar = () => {
             <li>
               <NavLink to='/account' className='link-wrapper'>
                 <span>{currentUser.username} </span>
-                <i class='fas fa-user'></i>
+                <i className='fas fa-user'></i>
               </NavLink>
             </li>
             <li>
