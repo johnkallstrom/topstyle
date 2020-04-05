@@ -42,7 +42,7 @@ const OrderList = ({ currentUser }) => {
       ) : (
         <>
           <div id='empty-order-list'>
-            <h3>No orders could be found.</h3>
+            <p>No orders could be found.</p>
           </div>
         </>
       )}

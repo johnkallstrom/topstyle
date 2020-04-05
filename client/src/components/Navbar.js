@@ -11,21 +11,32 @@ const Navbar = () => {
         {loggedIn ? (
           <>
             <li>
-              <NavLink to='/account'>{currentUser.username}</NavLink>
+              <NavLink to='/account' className='link-wrapper'>
+                <span>{currentUser.username} </span>
+                <i class='fas fa-user'></i>
+              </NavLink>
             </li>
             <li>
-              <NavLink to='/login' onClick={() => signOut()}>
-                Logout
+              <NavLink
+                to='/login'
+                onClick={() => signOut()}
+                className='link-wrapper'
+              >
+                Sign out
               </NavLink>
             </li>
           </>
         ) : (
           <>
             <li>
-              <NavLink to='/login'>Login</NavLink>
+              <NavLink to='/login' className='link-wrapper'>
+                Sign in
+              </NavLink>
             </li>
             <li>
-              <NavLink to='/register'>Register</NavLink>
+              <NavLink to='/register' className='link-wrapper'>
+                Register
+              </NavLink>
             </li>
           </>
         )}

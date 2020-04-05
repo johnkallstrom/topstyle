@@ -3,6 +3,7 @@
   --primary-color: #2d2d2d;
   --sub-color: #fff;
   --accent-color: #eee;
+  --hover-color: #070707;
 }
 
 * {
@@ -59,6 +60,20 @@ body {
   padding: 0 20px 0 20px;
   color: #fff;
   text-decoration: none;
+}
+
+#navbar .link-wrapper {
+  text-transform: none;
+  margin-right: 1rem;
+  background-color: var(--sub-color);
+  color: var(--primary-color);
+  border-radius: 8px;
+  padding: 5px 20px;
+  font-weight: 600;
+}
+
+#navbar .link-wrapper:hover {
+  cursor: pointer;
 }
 
 .footer {
