@@ -13,9 +13,12 @@
   margin-bottom: 1rem;
 }
 
+#order:last-child {
+  margin-bottom: 0rem;
+}
+
 #order ul {
   list-style: none;
-  margin-top: 0.5rem;
 }
 
 #order .product-wrapper {
@@ -23,10 +26,6 @@
   padding: 1rem;
   border: 1px solid var(--accent-color);
   border-radius: 8px;
-}
-
-#order .product-wrapper:last-child {
-  margin-bottom: 0rem;
 }
 
 #order .products {
@@ -37,4 +36,8 @@
 .date,
 .total {
   font-weight: bold;
+}
+
+#empty-order-list {
+  text-align: center;
 }

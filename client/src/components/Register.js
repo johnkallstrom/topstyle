@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../assets/Register.css';
+import { Redirect } from 'react-router-dom';
 
 const Register = () => {
   const [username, setUsername] = useState('');
@@ -7,29 +8,31 @@ const Register = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const [displayError, setDisplayError] = useState(false);
+  const [redirect, setRedirect] = useState(false);
 
-  const updateFirstName = e => {
+  const updateFirstName = (e) => {
     setFirstName(e.target.value);
   };
 
-  const updateLastName = e => {
+  const updateLastName = (e) => {
     setLastName(e.target.value);
   };
 
-  const updateEmail = e => {
+  const updateEmail = (e) => {
     setEmail(e.target.value);
   };
 
-  const updateUsername = e => {
+  const updateUsername = (e) => {
     setUsername(e.target.value);
   };
 
-  const updatePassword = e => {
+  const updatePassword = (e) => {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     const newUser = {
@@ -37,34 +40,44 @@ const Register = () => {
       password: password,
       firstName: firstName,
       lastName: lastName,
-      email: email
+      email: email,
     };
 
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(newUser)
+      body: JSON.stringify(newUser),
     };
 
     fetch('http://localhost:5000/api/user/register', requestOptions)
-      .then(res => res.json())
-      .then(data => {
-        if (!data.user) {
-          setDisplayError(true);
-        } else {
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.hasOwnProperty('username')) {
+          console.log('Registration succeeded.');
           console.log(data);
-          setFirstName('');
-          setLastName('');
-          setEmail('');
-          setUsername('');
-          setPassword('');
+          setRedirect(true);
+        } else {
+          console.log('Registration failed.');
+          setErrorMessage(data.message);
+          setDisplayError(true);
         }
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
+
+    setUsername('');
+    setPassword('');
+    setFirstName('');
+    setLastName('');
+    setEmail('');
   };
 
   return (
     <div id='register-form'>
+      {redirect && (
+        <>
+          <Redirect to='/login' />
+        </>
+      )}
       <div className='container'>
         <h2>Sign up</h2>
         {displayError && (
@@ -72,7 +85,7 @@ const Register = () => {
             <span id='close-error' onClick={() => setDisplayError(false)}>
               &times;
             </span>
-            <p>Registration failed. Please fill out the entire form.</p>
+            <p>{errorMessage}</p>
           </div>
         )}
         <form onSubmit={handleSubmit}>

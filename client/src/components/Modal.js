@@ -22,10 +22,12 @@ const Modal = ({ handleCloseModal, order, orderCompleted }) => {
               <h3>Thanks for your order!</h3>
               <hr></hr>
               <ul>
-                {order.products.map(product => {
+                {order.products.map((product) => {
                   return (
                     <div id='product-wrapper' key={product.id}>
-                      <li>Product: {product.name}</li>
+                      <li>
+                        Product: {product.name}, <span>{product.price} kr</span>
+                      </li>
                       <li>Quantity: {product.count}</li>
                     </div>
                   );

@@ -25,9 +25,6 @@ const Order = ({ date, total, products }) => {
             <span className='date'>Datum:</span>{' '}
             <Moment format='YYYY-MM-DD HH:mm'>{date}</Moment>
           </p>
-          <p>
-            <span className='total'>Total:</span> {total} &#107;&#114;
-          </p>
           <ul>
             <p className='products'>Products: </p>
             {products.map((product) => {
@@ -42,6 +39,9 @@ const Order = ({ date, total, products }) => {
               );
             })}
           </ul>
+          <p>
+            <span className='total'>Total:</span> {total} &#107;&#114;
+          </p>
         </>
       ) : (
         <>

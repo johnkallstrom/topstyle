@@ -17,8 +17,6 @@ const Login = () => {
     setPassword(e.target.value);
   };
 
-  // TODO: Move out fetch POST logic to a repository module or context
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -27,26 +25,9 @@ const Login = () => {
       password: password,
     };
 
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(user),
-    };
-
-    fetch('http://localhost:5000/api/user/login', requestOptions)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.token !== undefined) {
-          signIn(data.token);
-          setUsername('');
-          setPassword('');
-        } else {
-          setDisplayError(true);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    signIn(user);
+    setUsername('');
+    setPassword('');
   };
 
   return (

@@ -14,10 +14,12 @@ const getUser = async (req, res) => {
 
 const createUser = async (req, res) => {
   const userExists = await User.findOne({ username: req.body.username });
-  if (userExists === true)
-    return res
-      .status(400)
-      .send({ message: 'The username already exists in our database.' });
+  if (userExists) {
+    return res.status(400).send({
+      message:
+        'The username already exists in our database. Registration failed.',
+    });
+  }
 
   const hashedPass = await bcrypt.hash(req.body.password, 10);
 
@@ -26,14 +28,16 @@ const createUser = async (req, res) => {
     password: hashedPass,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-    email: req.body.email
+    email: req.body.email,
   });
 
   try {
     const savedUser = await newUser.save();
     res.json(savedUser);
   } catch (err) {
-    res.json({ message: err });
+    res.json({
+      message: 'Please fill out the entire form. Registration failed.',
+    });
   }
 };
 
