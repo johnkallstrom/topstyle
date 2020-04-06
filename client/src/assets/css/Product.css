@@ -98,6 +98,6 @@
     background-color: var(--sub-color);
     color: var(--primary-color);
     border-radius: 8px;
-    width: 90%;
+    width: 100%;
   }
 }

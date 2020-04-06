@@ -19,3 +19,13 @@
   float: right;
   width: 50%;
 }
+
+@media (max-width: 720px) {
+  #home #product-list {
+    width: 100%;
+  }
+
+  #home #cart {
+    width: 100%;
+  }
+}
