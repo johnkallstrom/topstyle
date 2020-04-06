@@ -30,14 +30,18 @@ body {
 }
 
 #header .container {
-  padding: 1.5rem 0rem 1.5rem 0rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  justify-items: center;
+  padding: 1rem;
 }
 
 #header a {
-  float: left;
   text-decoration: none;
   color: #fff;
   text-transform: uppercase;
+  justify-self: start;
+  padding-top: 0.5rem;
 }
 
 #header #branding {
@@ -45,7 +49,8 @@ body {
 }
 
 #navbar {
-  float: right;
+  padding-top: 0.5rem;
+  justify-self: end;
 }
 
 #navbar ul {
@@ -85,8 +90,16 @@ body {
 }
 
 @media (max-width: 992px) {
+  #header .container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    justify-items: center;
+    padding: 1rem;
+  }
+
   .container {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     overflow: hidden;
   }

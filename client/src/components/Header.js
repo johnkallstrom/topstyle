@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import Navbar from './Navbar';
 import { Link, withRouter } from 'react-router-dom';
 import { ProductContext } from '../contexts/ProductContext';
+import Search from './Search';
 
 const Header = () => {
   const { getProducts } = useContext(ProductContext);
@@ -14,6 +15,7 @@ const Header = () => {
             TopStyle
           </h1>
         </Link>
+        <Search />
         <Navbar />
       </div>
     </header>

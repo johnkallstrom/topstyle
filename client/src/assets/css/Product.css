@@ -90,3 +90,14 @@
     width: 80%;
   }
 }
+
+@media (max-width: 720px) {
+  #product {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: var(--sub-color);
+    color: var(--primary-color);
+    border-radius: 8px;
+    width: 90%;
+  }
+}
