@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Moment from 'react-moment';
-import '../assets/Order.css';
+import '../assets/css/Order.css';
 
 const Order = ({ date, total, products }) => {
   const [displayDetails, setDisplayDetails] = useState(false);

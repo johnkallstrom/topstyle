@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../assets/Register.css';
+import '../assets/css/Register.css';
 import { Redirect } from 'react-router-dom';
 
 const Register = () => {

@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import '../assets/Search.css';
+import '../assets/css/Search.css';
 import { ProductContext } from '../contexts/ProductContext';
 
 const Search = () => {

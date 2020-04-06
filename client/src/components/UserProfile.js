@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../contexts/UserContext';
-import '../assets/UserProfile.css';
+import '../assets/css/UserProfile.css';
 import OrderList from './OrderList';
 
 const UserProfile = () => {

@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import '../assets/Product.css';
+import '../assets/css/Product.css';
 import { CartContext } from '../contexts/CartContext';
 
 const Product = ({ id, name, category, description, price }) => {
@@ -22,7 +22,7 @@ const Product = ({ id, name, category, description, price }) => {
       category: category,
       description: description,
       price: price,
-      count: 1
+      count: 1,
     };
 
     if (product !== null) {

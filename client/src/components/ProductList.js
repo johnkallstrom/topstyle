@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import Product from './Product';
-import '../assets/Product.css';
+import '../assets/css/Product.css';
 import { ProductContext } from '../contexts/ProductContext';
 
 const ProductList = () => {
@@ -10,7 +10,7 @@ const ProductList = () => {
     <div id='product-list'>
       {products.length ? (
         <>
-          {products.map(product => {
+          {products.map((product) => {
             return (
               <Product
                 key={product._id}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../assets/Modal.css';
+import '../assets/css/Modal.css';
 import { Redirect } from 'react-router-dom';
 
 const Modal = ({ handleCloseModal, order, orderCompleted }) => {

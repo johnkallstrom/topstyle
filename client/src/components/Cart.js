@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react';
-import '../assets/Cart.css';
+import '../assets/css/Cart.css';
 import { CartContext } from '../contexts/CartContext';
 import { UserContext } from '../contexts/UserContext';
-import '../assets/Categories.css';
+import '../assets/css/Categories.css';
 import Modal from './Modal';
 
 const Cart = () => {
