@@ -35,9 +35,6 @@ const Search = () => {
             value={value}
             onChange={handleChange}
           />
-          <button id='search-button'>
-            <i className='fas fa-search'></i>
-          </button>
         </form>
       </div>
     </div>
