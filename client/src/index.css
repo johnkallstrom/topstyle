@@ -119,4 +119,12 @@ body {
     margin: 0 auto;
     overflow: hidden;
   }
+
+  .footer {
+    padding: 32px;
+    margin-top: 0rem;
+    color: var(--primary-color);
+    background-color: var(--accent-color);
+    text-align: center;
+  }
 }
