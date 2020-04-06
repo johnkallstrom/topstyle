@@ -91,6 +91,22 @@ body {
 
 @media (max-width: 992px) {
   #header .container {
+    width: 90%;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    justify-items: center;
+    padding: 1rem;
+  }
+
+  .container {
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 720px) {
+  #header .container {
     width: 100%;
     display: grid;
     grid-template-columns: auto 1fr auto;
