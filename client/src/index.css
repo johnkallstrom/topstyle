@@ -106,14 +106,6 @@ body {
 }
 
 @media (max-width: 720px) {
-  #header .container {
-    width: 100%;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    justify-items: center;
-    padding: 1rem;
-  }
-
   .container {
     width: 100%;
     margin: 0 auto;
@@ -126,5 +118,21 @@ body {
     color: var(--primary-color);
     background-color: var(--accent-color);
     text-align: center;
+  }
+
+  #header .container {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  #navbar {
+    padding-top: 0.5rem;
+  }
+
+  #header a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    padding-top: 0.5rem;
   }
 }
