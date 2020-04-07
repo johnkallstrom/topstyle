@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../assets/css/Register.css';
-import { Redirect } from 'react-router-dom';
+import Modal from './Modal';
 
 const Register = () => {
   const [username, setUsername] = useState('');
@@ -10,7 +10,8 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [displayError, setDisplayError] = useState(false);
-  const [redirect, setRedirect] = useState(false);
+  const [displayModal, setDisplayModal] = useState(false);
+  const [registerCompleted, setRegisterCompleted] = useState(false);
 
   const updateFirstName = (e) => {
     setFirstName(e.target.value);
@@ -55,7 +56,8 @@ const Register = () => {
         if (data.hasOwnProperty('username')) {
           console.log('Registration succeeded.');
           console.log(data);
-          setRedirect(true);
+          setRegisterCompleted(true);
+          setDisplayModal(true);
         } else {
           console.log('Registration failed.');
           setErrorMessage(data.message);
@@ -71,11 +73,20 @@ const Register = () => {
     setEmail('');
   };
 
+  const handleCloseModal = () => {
+    if (displayModal === true) {
+      setDisplayModal(false);
+    }
+  };
+
   return (
     <div id='register-form'>
-      {redirect && (
+      {displayModal && (
         <>
-          <Redirect to='/login' />
+          <Modal
+            handleCloseModal={handleCloseModal}
+            registerCompleted={registerCompleted}
+          />
         </>
       )}
       <div className='container'>

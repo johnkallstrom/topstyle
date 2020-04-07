@@ -105,6 +105,16 @@
   margin-bottom: 2rem;
 }
 
+#register-completed-wrapper {
+  text-align: center;
+}
+
+#register-completed-wrapper h3 {
+  font-size: 28px;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
 @keyframes modalopen {
   from {
     opacity: 0;
