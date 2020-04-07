@@ -50,7 +50,7 @@ const Register = () => {
       body: JSON.stringify(newUser),
     };
 
-    fetch('http://localhost:5000/api/user/register', requestOptions)
+    fetch('/api/user/register', requestOptions)
       .then((res) => res.json())
       .then((data) => {
         if (data.hasOwnProperty('username')) {

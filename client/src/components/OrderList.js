@@ -5,7 +5,7 @@ const OrderList = ({ currentUser }) => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    const url = 'http://localhost:5000/api/order';
+    const url = '/api/order';
     fetch(url)
       .then((res) => res.json())
       .then((data) => {

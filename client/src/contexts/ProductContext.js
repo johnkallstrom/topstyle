@@ -10,7 +10,7 @@ export const ProductProvider = (props) => {
   }, []);
 
   const getProducts = () => {
-    fetch('http://localhost:5000/api/product')
+    fetch('/api/product')
       .then((res) => res.json())
       .then((data) => {
         if (data !== null || data !== undefined) {
@@ -20,7 +20,7 @@ export const ProductProvider = (props) => {
   };
 
   const getProductsByName = (value) => {
-    fetch(`http://localhost:5000/api/product/find?name=${value}`)
+    fetch(`/api/product/find?name=${value}`)
       .then((res) => res.json())
       .then((data) => {
         if (data !== null || data !== undefined) {
@@ -30,7 +30,7 @@ export const ProductProvider = (props) => {
   };
 
   const getProductsByCategory = (value) => {
-    fetch(`http://localhost:5000/api/product/find?category=${value}`)
+    fetch(`/api/product/find?category=${value}`)
       .then((res) => res.json())
       .then((data) => {
         if (data !== null || data !== undefined) {

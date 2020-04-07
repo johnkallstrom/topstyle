@@ -36,7 +36,7 @@ export const UserProvider = (props) => {
       },
     };
 
-    fetch('http://localhost:5000/api/user', requestOptions)
+    fetch('/api/user', requestOptions)
       .then((res) => res.json())
       .then((data) => {
         setCurrentUser(data.user);

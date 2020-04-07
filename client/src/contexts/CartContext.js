@@ -2,7 +2,7 @@ import React, { useState, createContext, useEffect } from 'react';
 
 export const CartContext = createContext();
 
-export const CartProvider = props => {
+export const CartProvider = (props) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -18,25 +18,25 @@ export const CartProvider = props => {
     }
   }, [items]);
 
-  const addToCart = newItem => {
-    if (items.some(item => item.name === newItem.name)) {
+  const addToCart = (newItem) => {
+    if (items.some((item) => item.name === newItem.name)) {
       incrementItemCount(newItem.id);
     } else {
       setItems([newItem, ...items]);
     }
   };
 
-  const removeFromCart = id => {
-    const newItemList = items.filter(item => {
+  const removeFromCart = (id) => {
+    const newItemList = items.filter((item) => {
       return item.id !== id;
     });
 
     setItems(newItemList);
   };
 
-  const incrementItemCount = id => {
+  const incrementItemCount = (id) => {
     const currentItemList = [...items];
-    currentItemList.forEach(i => {
+    currentItemList.forEach((i) => {
       if (i.id === id) {
         i.count += 1;
       }
@@ -46,15 +46,15 @@ export const CartProvider = props => {
 
   const getTotal = () => {
     let total = 0;
-    items.forEach(item => {
+    items.forEach((item) => {
       total += item.price * item.count;
     });
     return total;
   };
 
-  const calculatePrice = id => {
+  const calculatePrice = (id) => {
     let total = 0;
-    items.forEach(item => {
+    items.forEach((item) => {
       if (item.id === id) {
         total += item.price * item.count;
       }
@@ -62,22 +62,22 @@ export const CartProvider = props => {
     return total;
   };
 
-  const createOrder = order => {
+  const createOrder = (order) => {
     const token = localStorage.getItem('token');
 
     const requestOptions = {
       method: 'POST',
       headers: {
         token: token,
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(order)
+      body: JSON.stringify(order),
     };
 
-    fetch('http://localhost:5000/api/order/create', requestOptions)
-      .then(res => res.json())
-      .then(data => console.log(data))
-      .catch(err => console.log(err));
+    fetch('/api/order/create', requestOptions)
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err));
   };
 
   const clearCart = () => {
@@ -94,7 +94,7 @@ export const CartProvider = props => {
         getTotal,
         calculatePrice,
         createOrder,
-        clearCart
+        clearCart,
       }}
     >
       {props.children}
