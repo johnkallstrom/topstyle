@@ -27,7 +27,7 @@
   padding: 2rem;
   background-color: var(--sub-color);
   border-radius: 8px;
-  width: 70%;
+  width: 90%;
 }
 
 #add-button {
@@ -67,11 +67,11 @@
     background-color: var(--sub-color);
     color: var(--primary-color);
     border-radius: 8px;
-    width: 80%;
+    width: 90%;
   }
 
   #add-button {
-    width: 50%;
+    width: 35%;
     margin-top: 0.5rem;
     padding: 0.6rem;
     font-family: var(--main-font);
@@ -87,7 +87,7 @@
     padding: 2rem;
     background-color: var(--sub-color);
     border-radius: 8px;
-    width: 80%;
+    width: 90%;
   }
 }
 
