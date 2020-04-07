@@ -54,7 +54,10 @@ const loginUser = async (req, res) => {
     return res.status(400).send({ message: 'The password is incorrect. ' });
   }
 
-  const token = jwt.sign({ user }, process.env.TOKEN_SECRET);
+  const token = jwt.sign(
+    { user },
+    '1axQDl5fcMTTts4Ed7bVGkKqJEcNhkLBsptX7lcfRjeiS8XnJ0sRiRLoxfdt2jtus3CuYkxiwWCX6JIeJ3CEjDLA8MVXNNMDeiK1DILbZjnP0LKs7O4VUQAzJt3145ST'
+  );
 
   try {
     res.header('token', token).send({ token: token });

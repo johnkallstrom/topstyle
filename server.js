@@ -13,7 +13,9 @@ app.use('/api/order', require('./routes/OrderRoutes'));
 mongoose.set('useUnifiedTopology', true);
 mongoose.set('useNewUrlParser', true);
 mongoose
-  .connect(process.env.DB_CONNECTION)
+  .connect(
+    'mongodb+srv://johnkallstrom:friXion05PILOT@topstylecluster-duooe.mongodb.net/test?retryWrites=true&w=majority'
+  )
   .then(() => console.log('connected to mongodb'));
 
 app.listen(5000, () => console.log('server up and running on port 5000'));
