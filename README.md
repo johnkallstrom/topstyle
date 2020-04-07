@@ -11,15 +11,19 @@ server code is located in the root directory and all client code (react) is loca
 "client". 
 
 ### Installing
-To get all necessary dependencies run this command inside the root director and inside the "client" directory
+To get all necessary dependencies for the node.js application run this command inside the root directory
 ```
 npm update
 ```
-To start up the server / API run this command inside the root directory
+To get all necessary dependencies for the react application run this command inside the client directory
+```
+npm update
+```
+To start up the API run this command inside the root directory
 ```
 npm start
 ```
-To start up the client / react application run this command inside the "client" directory
+To start up the react application run this command inside the client directory
 ```
 npm start
 ```
