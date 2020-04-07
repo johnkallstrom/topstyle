@@ -1,7 +1,7 @@
 # topstyle - webshop
-This a webshop application.
-You can register an account and login to start adding items to a shopping cart that is controlled 
-with localStorage. When your shopping cart is no longer empty you can place an order. There is also an account 
+This is a webshop application where you can register an account and login to start adding items to a shopping cart. 
+When your shopping cart is no longer empty you can place an order. 
+There is also an account 
 page where you can see your order history.
 
 ## Getting started
