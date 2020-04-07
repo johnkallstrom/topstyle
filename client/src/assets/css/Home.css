@@ -11,13 +11,13 @@
 }
 
 #home #product-list {
-  width: 50%;
+  width: 55%;
   float: left;
 }
 
 #home #cart {
   float: right;
-  width: 50%;
+  width: 45%;
 }
 
 @media (max-width: 720px) {

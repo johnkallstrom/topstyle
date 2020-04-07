@@ -64,6 +64,24 @@
   cursor: pointer;
 }
 
+#register-form #register-login-button {
+  width: 60%;
+  margin-top: 1rem;
+  padding: 1rem;
+  font-family: var(--main-font);
+  font-size: 17px;
+  border-radius: 8px;
+  border: none;
+  color: var(--sub-color);
+  background-color: var(--primary-color);
+  text-transform: uppercase;
+}
+
+#register-form #register-login-button:hover {
+  cursor: pointer;
+  background-color: var(--hover-color);
+}
+
 @media (max-width: 992px) {
   #register-form input {
     width: 50%;

@@ -28,7 +28,7 @@ const Modal = ({
             <div id='register-completed-wrapper'>
               <h3>Registration successful!</h3>
               <button
-                id='sign-in-button'
+                id='register-login-button'
                 onClick={() => setRedirectToLogin(true)}
               >
                 Login
