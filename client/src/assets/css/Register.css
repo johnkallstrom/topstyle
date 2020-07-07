@@ -11,8 +11,19 @@
   padding: 1rem;
 }
 
+#register-form .wrapper {
+  width: 40%;
+  border-radius: 8px;
+  background-color: var(--sub-color);
+  padding: 2rem;
+}
+
+#register-form h2 {
+  margin-bottom: 1rem;
+}
+
 #register-form input {
-  width: 35%;
+  width: 100%;
   padding: 0.8rem;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -22,7 +33,7 @@
 }
 
 #register-form button {
-  width: 15%;
+  width: 35%;
   margin-top: 0.5rem;
   padding: 0.8rem;
   font-family: var(--main-font);
@@ -39,7 +50,7 @@
 }
 
 .register-error {
-  width: 30%;
+  width: 75%;
   margin-top: 0.5rem;
   padding: 1rem;
   background-color: var(--error-color);
@@ -83,18 +94,15 @@
 }
 
 @media (max-width: 992px) {
-  #register-form input {
+  #register-form .wrapper {
     width: 50%;
-    padding: 0.8rem;
-    border: 1px solid #ccc;
     border-radius: 8px;
-    margin-top: 0.5rem;
-    font-family: var(--main-font);
-    font-size: 17px;
+    background-color: var(--sub-color);
+    padding: 2rem;
   }
 
   #register-form button {
-    width: 25%;
+    width: 50%;
     margin-top: 0.5rem;
     padding: 0.8rem;
     font-family: var(--main-font);
@@ -107,18 +115,15 @@
 }
 
 @media (max-width: 720px) {
-  #register-form input {
-    width: 80%;
-    padding: 0.8rem;
-    border: 1px solid #ccc;
+  #register-form .wrapper {
+    width: 75%;
     border-radius: 8px;
-    margin-top: 0.5rem;
-    font-family: var(--main-font);
-    font-size: 17px;
+    background-color: var(--sub-color);
+    padding: 2rem;
   }
 
   #register-form button {
-    width: 30%;
+    width: 50%;
     margin-top: 0.5rem;
     padding: 0.8rem;
     font-family: var(--main-font);
@@ -127,5 +132,13 @@
     border: none;
     color: var(--sub-color);
     background-color: var(--primary-color);
+  }
+
+  .register-error {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    background-color: var(--error-color);
+    border-radius: 8px;
   }
 }

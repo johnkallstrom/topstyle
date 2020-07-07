@@ -60,36 +60,38 @@ const Login = () => {
         <>
           {' '}
           <div className='container'>
-            <h2>Sign in</h2>
-            {displayError && (
-              <div className='login-error'>
-                <span id='close-error' onClick={() => setDisplayError(false)}>
-                  &times;
-                </span>
-                <p>{errorMessage}</p>
-              </div>
-            )}
-            <form onSubmit={handleSubmit}>
-              <div>
-                <input
-                  type='text'
-                  name='username'
-                  placeholder='Username'
-                  value={username}
-                  onChange={updateUsername}
-                />
-              </div>
-              <div>
-                <input
-                  type='password'
-                  name='password'
-                  value={password}
-                  placeholder='Password'
-                  onChange={updatePassword}
-                />
-              </div>
-              <button>Login</button>
-            </form>
+            <div className='wrapper'>
+              <h2>Sign in</h2>
+              {displayError && (
+                <div className='login-error'>
+                  <span id='close-error' onClick={() => setDisplayError(false)}>
+                    &times;
+                  </span>
+                  <p>{errorMessage}</p>
+                </div>
+              )}
+              <form onSubmit={handleSubmit}>
+                <div>
+                  <input
+                    type='text'
+                    name='username'
+                    placeholder='Username'
+                    value={username}
+                    onChange={updateUsername}
+                  />
+                </div>
+                <div>
+                  <input
+                    type='password'
+                    name='password'
+                    value={password}
+                    placeholder='Password'
+                    onChange={updatePassword}
+                  />
+                </div>
+                <button>Login</button>
+              </form>
+            </div>
           </div>
         </>
       )}
